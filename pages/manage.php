@@ -2,16 +2,20 @@
     <div class="mn_deadline">
         <div class="mn_deadline_container">
             <div class="navigate">
-                Home
-                My Deadline
+                <button class="navigate_home">Home</button>
+
+                <button class="navigate_home navigate_home-white">My Deadline</button>
             </div>
             <div class="list_deadline">
+                <label>
+                    WindyFeng
+                </label>
                 <div class="deadline_tab">
                     Deadline 1
                 </div>
                 <div class="deadline_tab">
                     Deadline 4
-                </div> 
+                </div>
                 <div class="deadline_tab">
                     Deadline 3
                 </div>
@@ -29,35 +33,153 @@
                 </button>
             </div>
             <div class="list_employee">
+                <div id="table-wrapper">
+                    <div id="table-scroll">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td class="tg-0lax">N</td>
+                                    <td class="tg-0lax">Name</td>
+                                    <td class="tg-0lax">Level</td>
+                                    <td class="tg-0pky">Task Name</td>
+                                    <td class="tg-0pky">Team</td>
+                                    <td class="tg-0pky">Result</td>
+                                    <td class="tg-0pky">Deadline</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
+                                    <td class="tg-0lax">Kỳ Phong</td>
+                                    <td class="tg-0lax">1</td>
+                                    <td class="tg-0lax">Web Assignment</td>
+                                    <td class="tg-0lax">7</td>
+                                    <td class="tg-0lax">None</td>
+                                    <td class="tg-0lax">12th May</td>
+                                </tr>
+                                <tr>
+                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
+                                    <td class="tg-0lax">Tài</td>
+                                    <td class="tg-0lax">1</td>
+                                    <td class="tg-0lax">Web Assignment</td>
+                                    <td class="tg-0lax">7</td>
+                                    <td class="tg-0lax">None</td>
+                                    <td class="tg-0lax">12th May</td>
+                                </tr>
+                                <tr>
+                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
+                                    <td class="tg-0lax">Tài</td>
+                                    <td class="tg-0lax">1</td>
+                                    <td class="tg-0lax">Web Assignment</td>
+                                    <td class="tg-0lax">7</td>
+                                    <td class="tg-0lax">None</td>
+                                    <td class="tg-0lax">12th May</td>
+                                </tr>
+                                <tr>
+                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
+                                    <td class="tg-0lax">Kỳ Phong</td>
+                                    <td class="tg-0lax">1</td>
+                                    <td class="tg-0lax">Web Assignment</td>
+                                    <td class="tg-0lax">7</td>
+                                    <td class="tg-0lax">None</td>
+                                    <td class="tg-0lax">12th May</td>
+                                </tr>
+                                <tr>
+                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
+                                    <td class="tg-0lax">Tài</td>
+                                    <td class="tg-0lax">1</td>
+                                    <td class="tg-0lax">Web Assignment</td>
+                                    <td class="tg-0lax">7</td>
+                                    <td class="tg-0lax">None</td>
+                                    <td class="tg-0lax">12th May</td>
+                                </tr>
+                                <tr>
+                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
+                                    <td class="tg-0lax">Tài</td>
+                                    <td class="tg-0lax">1</td>
+                                    <td class="tg-0lax">Web Assignment</td>
+                                    <td class="tg-0lax">7</td>
+                                    <td class="tg-0lax">None</td>
+                                    <td class="tg-0lax">12th May</td>
+                                </tr>
+                                <tr>
+                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
+                                    <td class="tg-0lax">Tài</td>
+                                    <td class="tg-0lax">1</td>
+                                    <td class="tg-0lax">Web Assignment</td>
+                                    <td class="tg-0lax">7</td>
+                                    <td class="tg-0lax">None</td>
+                                    <td class="tg-0lax">12th May</td>
+                                </tr>
+                                <tr>
+                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
+                                    <td class="tg-0lax">Kỳ Phong</td>
+                                    <td class="tg-0lax">1</td>
+                                    <td class="tg-0lax">Web Assignment</td>
+                                    <td class="tg-0lax">7</td>
+                                    <td class="tg-0lax">None</td>
+                                    <td class="tg-0lax">12th May</td>
+                                </tr>
+                                <tr>
+                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
+                                    <td class="tg-0lax">Tài</td>
+                                    <td class="tg-0lax">1</td>
+                                    <td class="tg-0lax">Web Assignment</td>
+                                    <td class="tg-0lax">7</td>
+                                    <td class="tg-0lax">None</td>
+                                    <td class="tg-0lax">12th May</td>
+                                </tr>
+                                <tr>
+                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
+                                    <td class="tg-0lax">Tài</td>
+                                    <td class="tg-0lax">1</td>
+                                    <td class="tg-0lax">Web Assignment</td>
+                                    <td class="tg-0lax">7</td>
+                                    <td class="tg-0lax">None</td>
+                                    <td class="tg-0lax">12th May</td>
+                                </tr>
+                                <tr>
+                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
+                                    <td class="tg-0lax">Tài</td>
+                                    <td class="tg-0lax">1</td>
+                                    <td class="tg-0lax">Web Assignment</td>
+                                    <td class="tg-0lax">7</td>
+                                    <td class="tg-0lax">None</td>
+                                    <td class="tg-0lax">12th May</td>
+                                </tr>
+                                <tr>
+                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
+                                    <td class="tg-0lax">Kỳ Phong</td>
+                                    <td class="tg-0lax">1</td>
+                                    <td class="tg-0lax">Web Assignment</td>
+                                    <td class="tg-0lax">7</td>
+                                    <td class="tg-0lax">None</td>
+                                    <td class="tg-0lax">12th May</td>
+                                </tr>
+                                <tr>
+                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
+                                    <td class="tg-0lax">Tài</td>
+                                    <td class="tg-0lax">1</td>
+                                    <td class="tg-0lax">Web Assignment</td>
+                                    <td class="tg-0lax">7</td>
+                                    <td class="tg-0lax">None</td>
+                                    <td class="tg-0lax">12th May</td>
+                                </tr>
+                                <tr>
+                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
+                                    <td class="tg-0lax">Tài</td>
+                                    <td class="tg-0lax">1</td>
+                                    <td class="tg-0lax">Web Assignment</td>
+                                    <td class="tg-0lax">7</td>
+                                    <td class="tg-0lax">None</td>
+                                    <td class="tg-0lax">12th May</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
                 <table class="tg">
-                    <thead>
-                        <tr>
-                            <td class="tg-0lax">Name</td>
-                            <td class="tg-0lax">Level</td>
-                            <td class="tg-0pky">Task Name</td>
-                            <td class="tg-0pky">Team</td>
-                            <td class="tg-0pky">Result</td>
-                            <td class="tg-0pky">Deadline</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="tg-0lax">Kỳ Phong</td>
-                            <td class="tg-0lax">1</td>
-                            <td class="tg-0lax">Web Assignment</td>
-                            <td class="tg-0lax">7</td>
-                            <td class="tg-0lax">None</td>
-                            <td class="tg-0lax">12th May</td>
-                        </tr>
-                        <tr>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                            <td class="tg-0lax"></td>
-                        </tr>
-                    </tbody>
+
                 </table>
             </div>
         </div>
@@ -77,7 +199,6 @@
         <div class="mn_detail_container">
             <div class="detail_view">
                 KY PHONG
-                whataaaaaaaaaaaaaaaaaaaaaaaaaaaa
             </div>
             <div class="detail_refresh">
                 <button>Refresh</button>
@@ -95,7 +216,9 @@
             </div>
             <div class="assign_function">
                 <button>Assign</button>
-                <button>File</button>
+                <button>
+                    <input type="file">
+                </button>
             </div>
 
         </div>

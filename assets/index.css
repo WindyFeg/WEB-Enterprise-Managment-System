@@ -1,5 +1,5 @@
 .manage {
-    background-color: aqua;
+    background-color: white;
 
     width: 100%;
     height: 100%;
@@ -12,6 +12,7 @@
     height: 66%;
     width: 20%;
     position: absolute;
+    border: 1px solid #D0D4E4;
 
     background: #FFFFFF;
     box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.1);
@@ -24,6 +25,19 @@
 
 .navigate {}
 
+.navigate_home {
+    background: #CCE5FF;
+    border-radius: 4px;
+    width: 95%;
+    height: 32px;
+    border: none;
+    margin: 5px;
+}
+
+.navigate_home-white {
+    background-color: #FFFFFF;
+}
+
 .list_deadline {
     height: 90%;
     width: 100%;
@@ -32,7 +46,7 @@
 /*% EMPLOYEE LIST */
 
 .manage .mn_employeeList {
-    background-color: green;
+    background-color: white;
     display: inline-block;
     position: relative;
     left: 20.5%;
@@ -136,3 +150,61 @@
 }
 
 .assign_function {}
+
+#table-wrapper {
+    position: relative;
+}
+
+#table-scroll {
+    height: 90%;
+    overflow: auto;
+    margin-top: 20px;
+}
+
+#table-wrapper table {
+    width: 100%;
+
+}
+
+#table-wrapper table * {
+    /* background: yellow; */
+    color: black;
+}
+
+#table-wrapper table thead th .text {
+    position: absolute;
+    top: -20px;
+    z-index: 2;
+    height: 20px;
+    width: 35%;
+    border: 1px solid red;
+
+
+}
+
+#table-wrapper table thead tr {
+    background: rgba(255, 255, 255, 0.97);
+
+}
+
+#table-wrapper table tbody tr {
+    cursor: pointer;
+    background-color: #F5F6F8;
+    border: 0.8px solid #D0D4E4;
+    height: 36px;
+    box-sizing: border-box;
+}
+
+#table-wrapper table tbody tr:hover {
+    cursor: pointer;
+    background-color: red;
+}
+
+#table-wrapper table tbody tr input {
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #C3C6D4;
+    border-radius: 2px;
+    margin: 10px;
+}
