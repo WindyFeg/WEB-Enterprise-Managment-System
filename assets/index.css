@@ -1,0 +1,138 @@
+.manage {
+    background-color: aqua;
+
+    width: 100%;
+    height: 100%;
+}
+
+/*% DEADLINE */
+.manage .mn_deadline {
+    background-color: red;
+    display: inline-block;
+    height: 66%;
+    width: 20%;
+    position: absolute;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+    border-radius: 0px 12px 0px 0px;
+}
+
+.mn_deadline_container {
+    /* position: absolute; */
+}
+
+.navigate {}
+
+.list_deadline {
+    height: 90%;
+    width: 100%;
+}
+
+/*% EMPLOYEE LIST */
+
+.manage .mn_employeeList {
+    background-color: green;
+    display: inline-block;
+    position: relative;
+    left: 20.5%;
+
+    height: 66%;
+    width: 79%;
+}
+
+.mn_employee_container {
+    /* position: absolute; */
+}
+
+.btn_assign {}
+
+.list_employee {
+    height: 90%;
+    width: 100%;
+}
+
+/*%COMMENT  */
+.manage .mn_comment {
+    background: #FFFFFF;
+    border: 1px solid #D0D4E4;
+    border-radius: 2px;
+    display: inline-block;
+    box-sizing: border-box;
+
+
+    height: 33%;
+    width: 40%;
+}
+
+.mn_comment_container {
+    padding: 10px;
+}
+
+.comment_view {
+
+    background: #F5F6F8;
+    border-radius: 2px;
+
+    height: 80%;
+    width: 100%;
+}
+
+.mn_comment form {
+    height: 20%;
+
+}
+
+
+/*% DETAIL */
+.manage .mn_detail {
+    background: #FFFFFF;
+    border: 1px solid #D0D4E4;
+    border-radius: 2px;
+    display: inline-block;
+    box-sizing: border-box;
+
+    height: 33%;
+    width: 19%;
+}
+
+.mn_detail_container {
+    padding: 10px;
+
+}
+
+.detail_view {
+    background: #F5F6F8;
+    border-radius: 2px;
+    height: 80%;
+    width: 100%;
+}
+
+.detail_refresh {}
+
+/*% ASSIGN  */
+
+.manage .mn_assign {
+    background: #FFFFFF;
+    border: 1px solid #D0D4E4;
+    border-radius: 2px;
+    display: inline-block;
+    box-sizing: border-box;
+
+
+    width: 40%;
+    height: 33%;
+}
+
+.mn_assign_container {
+    padding: 10px;
+}
+
+.assign_view {
+    background: #F5F6F8;
+    border-radius: 2px;
+    height: 80%;
+    width: 100%;
+}
+
+.assign_function {}
