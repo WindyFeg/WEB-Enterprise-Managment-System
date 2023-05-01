@@ -29,7 +29,7 @@
         <div class="mn_employee_container">
             <div class="btn_assign">
                 <button class="btn_employee">
-                    Assign
+                    Assign Task
                 </button>
             </div>
             <div class="list_employee">
@@ -191,7 +191,7 @@
             </div>
             <form>
                 <input type="text" id="comment_input">
-                <button type="submit">Comment </button>
+                <button type="submit" class="btn comment_btn">Comment </button>
             </form>
         </div>
     </div>
@@ -201,7 +201,7 @@
                 KY PHONG
             </div>
             <div class="detail_refresh">
-                <button>Refresh</button>
+                <button class="btn refresh_btn">Refresh</button>
             </div>
         </div>
     </div>
@@ -215,12 +215,30 @@
                 </div>
             </div>
             <div class="assign_function">
-                <button>Assign</button>
-                <button>
-                    <input type="file">
+                <button class="btn assign_btn">Assign</button>
+                <button disabled style="visibility: hidden;">
+                    <form>
+                        <input id="fileinput" type="file" style="display:none;" />
+                    </form>
+                    <button id="falseinput" class="btn file_btn">File</button>
+                    <span id="selected_filename">No file selected</span>
                 </button>
+
             </div>
 
         </div>
     </div>
 </div>
+
+
+<script>
+    $(document).ready(function () {
+        $('#falseinput').click(function () {
+            $("#fileinput").click();
+        });
+    });
+    $('#fileinput').change(function () {
+        $('#selected_filename').text($('#fileinput')[0].files[0].name);
+    });
+
+</script>
