@@ -1,5 +1,9 @@
   @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+  * {
+      font-family: 'Roboto';
+  }
+
   .btn {
       background: rgba(0, 115, 234, 0.7);
       border-radius: 2px;
@@ -70,6 +74,23 @@
   .list_deadline {
       height: 90%;
       width: 100%;
+      padding: 10px;
+      border-left: solid 1px #D0D4E4;
+  }
+
+  .deadline_tab {
+      cursor: pointer;
+      margin-left: 25px;
+  }
+
+  .deadline-icon {
+      width: 20px;
+      fill: #DF0000;
+  }
+
+  #downarrow {
+      width: 10px;
+      margin-left: 10px;
   }
 
   /*% EMPLOYEE LIST */
@@ -135,6 +156,7 @@
 
       background: #F5F6F8;
       border-radius: 2px;
+      padding: 10px;
 
       height: 80%;
       width: 100%;
@@ -167,6 +189,8 @@
   .detail_view {
       background: #F5F6F8;
       border-radius: 2px;
+      padding: 10px;
+
       height: 80%;
       width: 100%;
   }
@@ -194,6 +218,8 @@
   .assign_view {
       background: #F5F6F8;
       border-radius: 2px;
+      padding: 10px;
+
       height: 80%;
       width: 100%;
   }
@@ -213,6 +239,17 @@
       background-color: white;
       color: #564eb7;
       border: solid 1px #564eb7;
+
+  }
+
+  #assign-icon {
+      width: 10px;
+      fill: white;
+  }
+
+  #file-icon {
+      width: 10px;
+      fill: white;
   }
 
   #selected_filename {
