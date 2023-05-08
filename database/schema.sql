@@ -1,5 +1,6 @@
 -- USE `ManageSys`
 
+DROP TABLE IF EXISTS `user` ;
 CREATE TABLE user (
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY ,
     username VARCHAR(50) NOT NULL UNIQUE,
@@ -17,12 +18,14 @@ CREATE TABLE user (
     gender ENUM('male', 'female')
 ) ;
 
+DROP TABLE IF EXISTS `director` ;
 CREATE TABLE director (
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY ,
     title VARCHAR(50) ,
     FOREIGN KEY (id) REFERENCES user(id) ON DELETE CASCADE
 ) ;
 
+DROP TABLE IF EXISTS `dep_head` ;
 CREATE TABLE dep_head (
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY ,
     dept INT(11) ,
@@ -32,6 +35,7 @@ CREATE TABLE dep_head (
     FOREIGN KEY (dir) REFERENCES director(id) ON DELETE SET NULL
 ) ;
 
+DROP TABLE IF EXISTS `employee` ;
 CREATE TABLE employee (
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY ,
     dept INT(11) ,
@@ -42,12 +46,14 @@ CREATE TABLE employee (
     FOREIGN KEY (dir) REFERENCES director(id) ON DELETE SET NULL    
 ) ;
 
+DROP TABLE IF EXISTS `department` ;
 CREATE TABLE department (
     dept_id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY ,
     dept_name VARCHAR(50) NOT NULL,
     emp_count INT(6)
 ) ;
 
+DROP TABLE IF EXISTS `task` ;
 CREATE TABLE task (
     task_id INT(20) UNSIGNED AUTO_INCREMENT PRIMARY KEY ,
     descrip LONGBLOB ,
@@ -57,6 +63,7 @@ CREATE TABLE task (
     FOREIGN KEY (boss_id) REFERENCES user(id) ON DELETE SET NULL ,
 ) ;
 
+DROP TABLE IF EXISTS `result` ;
 CREATE TABLE result (
     result_id INT(20) UNSIGNED AUTO_INCREMENT PRIMARY KEY ,
     task_id INT(11) NOT NULL ,
@@ -70,6 +77,7 @@ CREATE TABLE result (
     FOREIGN KEY (emp_id) REFERENCES user(id) ON DELETE CASCADE
 ) ;
 
+DROP TABLE IF EXISTS `assign_task` ;
 CREATE TABLE assign_task (
     task_id INT(20) NOT NULL ,
     emp_id INT(11) NOT NULL ,
