@@ -1,8 +1,24 @@
+<script>
+    function GetAllEmployeeByDepartment(id) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.response);
+                document.getElementById("employee_list").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "../sever/employee_processing.php?manageid=" + id, true);
+        xhttp.send();
+    }
+</script>
+
 <div class="manage">
     <div class="mn_deadline">
         <div class="mn_deadline_container">
             <div class="navigate">
-                <button class="navigate_home">Home</button>
+                <button class="navigate_home" onclick={home()}>
+                    <a href="http://localhost/index.php?page=home">Home</a>
+                </button>
 
                 <button class="navigate_home navigate_home-white">My Deadline</button>
             </div>
@@ -73,150 +89,15 @@
                                     <td class="tg-0lax">Name</td>
                                     <td class="tg-0lax">Level</td>
                                     <td class="tg-0pky">Task Name</td>
-                                    <td class="tg-0pky">Team</td>
+                                    <td class="tg-0pky">Employee ID</td>
                                     <td class="tg-0pky">Result</td>
                                     <td class="tg-0pky">Deadline</td>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="employee_list">
                                 <?php
-                                
-                                ?>
-                                <tr class="employee_level_color elc_red">
-                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
-                                    <td class="tg-0lax">Kỳ Phong</td>
-                                    <td class="tg-0lax">1</td>
-                                    <td class="tg-0lax">Web Assignment</td>
-                                    <td class="tg-0lax">7</td>
-                                    <td class="tg-0lax">None</td>
-                                    <td class="tg-0lax">12th May</td>
-                                </tr>
-                                <tr class="employee_level_color elc_red">
-                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
-                                    <td class="tg-0lax">Kỳ Phong</td>
-                                    <td class="tg-0lax">1</td>
-                                    <td class="tg-0lax">Web Assignment</td>
-                                    <td class="tg-0lax">7</td>
-                                    <td class="tg-0lax">None</td>
-                                    <td class="tg-0lax">12th May</td>
-                                </tr>
-                                <tr class="employee_level_color elc_red">
-                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
-                                    <td class="tg-0lax">Tài</td>
-                                    <td class="tg-0lax">1</td>
-                                    <td class="tg-0lax">Web Assignment</td>
-                                    <td class="tg-0lax">7</td>
-                                    <td class="tg-0lax">None</td>
-                                    <td class="tg-0lax">12th May</td>
-                                </tr>
-                                <tr class="employee_level_color elc_red">
-                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
-                                    <td class="tg-0lax">Tài</td>
-                                    <td class="tg-0lax">1</td>
-                                    <td class="tg-0lax">Web Assignment</td>
-                                    <td class="tg-0lax">7</td>
-                                    <td class="tg-0lax">None</td>
-                                    <td class="tg-0lax">12th May</td>
-                                </tr>
-                                <tr class="employee_level_color elc_green">
-                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
-                                    <td class="tg-0lax">Kỳ Phong</td>
-                                    <td class="tg-0lax">1</td>
-                                    <td class="tg-0lax">Web Assignment</td>
-                                    <td class="tg-0lax">7</td>
-                                    <td class="tg-0lax">None</td>
-                                    <td class="tg-0lax">12th May</td>
-                                </tr>
-                                <tr class="employee_level_color">
-                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
-                                    <td class="tg-0lax">Tài</td>
-                                    <td class="tg-0lax">1</td>
-                                    <td class="tg-0lax">Web Assignment</td>
-                                    <td class="tg-0lax">7</td>
-                                    <td class="tg-0lax"><a href="/images/myw3schoolsimage.jpg" download> file</a></td>
-                                    <td class="tg-0lax">12th May</td>
-                                </tr>
-                                <tr class="employee_level_color">
-                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
-                                    <td class="tg-0lax">Tài</td>
-                                    <td class="tg-0lax">1</td>
-                                    <td class="tg-0lax">Web Assignment</td>
-                                    <td class="tg-0lax">7</td>
-                                    <td class="tg-0lax">None</td>
-                                    <td class="tg-0lax">12th May</td>
-                                </tr>
-                                <tr class="employee_level_color">
-                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
-                                    <td class="tg-0lax">Tài</td>
-                                    <td class="tg-0lax">1</td>
-                                    <td class="tg-0lax">Web Assignment</td>
-                                    <td class="tg-0lax">7</td>
-                                    <td class="tg-0lax">None</td>
-                                    <td class="tg-0lax">12th May</td>
-                                </tr>
-                                <tr class="employee_level_color">
-                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
-                                    <td class="tg-0lax">Kỳ Phong</td>
-                                    <td class="tg-0lax">1</td>
-                                    <td class="tg-0lax">Web Assignment</td>
-                                    <td class="tg-0lax">7</td>
-                                    <td class="tg-0lax">None</td>
-                                    <td class="tg-0lax">12th May</td>
-                                </tr>
-                                <tr class="employee_level_color">
-                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
-                                    <td class="tg-0lax">Tài</td>
-                                    <td class="tg-0lax">1</td>
-                                    <td class="tg-0lax">Web Assignment</td>
-                                    <td class="tg-0lax">7</td>
-                                    <td class="tg-0lax">None</td>
-                                    <td class="tg-0lax">12th May</td>
-                                </tr>
-                                <tr class="employee_level_color">
-                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
-                                    <td class="tg-0lax">Tài</td>
-                                    <td class="tg-0lax">1</td>
-                                    <td class="tg-0lax">Web Assignment</td>
-                                    <td class="tg-0lax">7</td>
-                                    <td class="tg-0lax">None</td>
-                                    <td class="tg-0lax">12th May</td>
-                                </tr>
-                                <tr class="employee_level_color">
-                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
-                                    <td class="tg-0lax">Tài</td>
-                                    <td class="tg-0lax">1</td>
-                                    <td class="tg-0lax">Web Assignment</td>
-                                    <td class="tg-0lax">7</td>
-                                    <td class="tg-0lax">None</td>
-                                    <td class="tg-0lax">12th May</td>
-                                </tr>
-                                <tr class="employee_level_color">
-                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
-                                    <td class="tg-0lax">Kỳ Phong</td>
-                                    <td class="tg-0lax">1</td>
-                                    <td class="tg-0lax">Web Assignment</td>
-                                    <td class="tg-0lax">7</td>
-                                    <td class="tg-0lax">None</td>
-                                    <td class="tg-0lax">12th May</td>
-                                </tr>
-                                <tr class="employee_level_color">
-                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
-                                    <td class="tg-0lax">Tài</td>
-                                    <td class="tg-0lax">1</td>
-                                    <td class="tg-0lax">Web Assignment</td>
-                                    <td class="tg-0lax">7</td>
-                                    <td class="tg-0lax">None</td>
-                                    <td class="tg-0lax">12th May</td>
-                                </tr>
-                                <tr class="employee_level_color">
-                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
-                                    <td class="tg-0lax">Tài</td>
-                                    <td class="tg-0lax">1</td>
-                                    <td class="tg-0lax">Web Assignment</td>
-                                    <td class="tg-0lax">7</td>
-                                    <td class="tg-0lax">None</td>
-                                    <td class="tg-0lax">12th May</td>
-                                </tr>
+                                echo "<script>", "GetAllEmployeeByDepartment(" . $_SESSION['manageid'] . ");", "</script>"
+                                    ?>
                             </tbody>
                         </table>
                     </div>
@@ -306,5 +187,11 @@
 
         // add to database section
     }
+
+    function home() {
+        header("location: ../index.php?page=manage");
+    }
+
+
 
 </script>

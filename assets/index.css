@@ -58,6 +58,12 @@
       margin: 5px;
   }
 
+  .navigate_home a {
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+  }
+
   .navigate_home-white {
       background-color: #FFFFFF;
       font-family: 'Righteous', cursive;
