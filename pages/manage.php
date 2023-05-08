@@ -68,7 +68,7 @@
                     <div id="table-scroll">
                         <table>
                             <thead>
-                                <tr>
+                                <tr class="employee_level_color">
                                     <td class="tg-0lax">N</td>
                                     <td class="tg-0lax">Name</td>
                                     <td class="tg-0lax">Level</td>
@@ -79,7 +79,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr class="employee_level_color elc_red">
                                     <td class="tg-0lax"> <input type="checkbox"> </input></td>
                                     <td class="tg-0lax">Kỳ Phong</td>
                                     <td class="tg-0lax">1</td>
@@ -88,7 +88,7 @@
                                     <td class="tg-0lax">None</td>
                                     <td class="tg-0lax">12th May</td>
                                 </tr>
-                                <tr>
+                                <tr class="employee_level_color elc_red">
                                     <td class="tg-0lax"> <input type="checkbox"> </input></td>
                                     <td class="tg-0lax">Tài</td>
                                     <td class="tg-0lax">1</td>
@@ -97,7 +97,7 @@
                                     <td class="tg-0lax">None</td>
                                     <td class="tg-0lax">12th May</td>
                                 </tr>
-                                <tr>
+                                <tr class="employee_level_color elc_red">
                                     <td class="tg-0lax"> <input type="checkbox"> </input></td>
                                     <td class="tg-0lax">Tài</td>
                                     <td class="tg-0lax">1</td>
@@ -106,7 +106,7 @@
                                     <td class="tg-0lax">None</td>
                                     <td class="tg-0lax">12th May</td>
                                 </tr>
-                                <tr>
+                                <tr class="employee_level_color elc_green">
                                     <td class="tg-0lax"> <input type="checkbox"> </input></td>
                                     <td class="tg-0lax">Kỳ Phong</td>
                                     <td class="tg-0lax">1</td>
@@ -115,7 +115,7 @@
                                     <td class="tg-0lax">None</td>
                                     <td class="tg-0lax">12th May</td>
                                 </tr>
-                                <tr>
+                                <tr class="employee_level_color">
                                     <td class="tg-0lax"> <input type="checkbox"> </input></td>
                                     <td class="tg-0lax">Tài</td>
                                     <td class="tg-0lax">1</td>
@@ -124,7 +124,7 @@
                                     <td class="tg-0lax"><a href="/images/myw3schoolsimage.jpg" download> file</a></td>
                                     <td class="tg-0lax">12th May</td>
                                 </tr>
-                                <tr>
+                                <tr class="employee_level_color">
                                     <td class="tg-0lax"> <input type="checkbox"> </input></td>
                                     <td class="tg-0lax">Tài</td>
                                     <td class="tg-0lax">1</td>
@@ -133,7 +133,7 @@
                                     <td class="tg-0lax">None</td>
                                     <td class="tg-0lax">12th May</td>
                                 </tr>
-                                <tr>
+                                <tr class="employee_level_color">
                                     <td class="tg-0lax"> <input type="checkbox"> </input></td>
                                     <td class="tg-0lax">Tài</td>
                                     <td class="tg-0lax">1</td>
@@ -142,7 +142,7 @@
                                     <td class="tg-0lax">None</td>
                                     <td class="tg-0lax">12th May</td>
                                 </tr>
-                                <tr>
+                                <tr class="employee_level_color">
                                     <td class="tg-0lax"> <input type="checkbox"> </input></td>
                                     <td class="tg-0lax">Kỳ Phong</td>
                                     <td class="tg-0lax">1</td>
@@ -151,7 +151,7 @@
                                     <td class="tg-0lax">None</td>
                                     <td class="tg-0lax">12th May</td>
                                 </tr>
-                                <tr>
+                                <tr class="employee_level_color">
                                     <td class="tg-0lax"> <input type="checkbox"> </input></td>
                                     <td class="tg-0lax">Tài</td>
                                     <td class="tg-0lax">1</td>
@@ -160,7 +160,7 @@
                                     <td class="tg-0lax">None</td>
                                     <td class="tg-0lax">12th May</td>
                                 </tr>
-                                <tr>
+                                <tr class="employee_level_color">
                                     <td class="tg-0lax"> <input type="checkbox"> </input></td>
                                     <td class="tg-0lax">Tài</td>
                                     <td class="tg-0lax">1</td>
@@ -169,7 +169,7 @@
                                     <td class="tg-0lax">None</td>
                                     <td class="tg-0lax">12th May</td>
                                 </tr>
-                                <tr>
+                                <tr class="employee_level_color">
                                     <td class="tg-0lax"> <input type="checkbox"> </input></td>
                                     <td class="tg-0lax">Tài</td>
                                     <td class="tg-0lax">1</td>
@@ -178,7 +178,7 @@
                                     <td class="tg-0lax">None</td>
                                     <td class="tg-0lax">12th May</td>
                                 </tr>
-                                <tr>
+                                <tr class="employee_level_color">
                                     <td class="tg-0lax"> <input type="checkbox"> </input></td>
                                     <td class="tg-0lax">Kỳ Phong</td>
                                     <td class="tg-0lax">1</td>
@@ -187,7 +187,7 @@
                                     <td class="tg-0lax">None</td>
                                     <td class="tg-0lax">12th May</td>
                                 </tr>
-                                <tr>
+                                <tr class="employee_level_color">
                                     <td class="tg-0lax"> <input type="checkbox"> </input></td>
                                     <td class="tg-0lax">Tài</td>
                                     <td class="tg-0lax">1</td>
@@ -196,7 +196,7 @@
                                     <td class="tg-0lax">None</td>
                                     <td class="tg-0lax">12th May</td>
                                 </tr>
-                                <tr>
+                                <tr class="employee_level_color">
                                     <td class="tg-0lax"> <input type="checkbox"> </input></td>
                                     <td class="tg-0lax">Tài</td>
                                     <td class="tg-0lax">1</td>
@@ -220,10 +220,10 @@
             <div class="comment_view">
                 Boss: do it again!
             </div>
-            <form>
+            <div>
                 <input type="text" id="comment_input">
-                <button type="submit" class="btn comment_btn">Comment </button>
-            </form>
+                <button onclick={AddComment()} class="btn comment_btn">Comment </button>
+            </div>
         </div>
     </div>
     <div class="mn_detail">
@@ -284,5 +284,15 @@
     $('#fileinput').change(function () {
         $('#selected_filename').text($('#fileinput')[0].files[0].name);
     });
+
+    function AddComment() {
+        cmt = document.getElementById("comment_input").value;
+        document.getElementById("comment_input").value = "";
+        document.getElementsByClassName("comment_view")[0].innerHTML
+            += "<div>Me: " + cmt + "</div>";
+
+
+        // add to database section
+    }
 
 </script>

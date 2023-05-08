@@ -169,6 +169,13 @@
 
   .comment_btn {}
 
+  #comment_input {
+      width: 80%;
+      border: solid 1px #D0D4E4;
+      border-radius: 2px;
+      /* height: 65%; */
+  }
+
   /*% DETAIL */
   .manage .mn_detail {
       background: #FFFFFF;
@@ -300,11 +307,42 @@
       border: 0.8px solid #D0D4E4;
       height: 36px;
       box-sizing: border-box;
+      position: relative;
+      transition: 0.3s;
   }
 
   #table-wrapper table tbody tr:hover {
       cursor: pointer;
+      background-color: white;
+      transform: scale(0.99);
+
+  }
+
+
+  .employee_level_color {
+      padding-left: 10px;
+  }
+
+  .employee_level_color::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 5px;
+      background-color: white;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+  }
+
+  .elc_red::before {
       background-color: red;
+
+  }
+
+  .elc_green::before {
+      background-color: green;
+
   }
 
   #table-wrapper table tbody tr input {
