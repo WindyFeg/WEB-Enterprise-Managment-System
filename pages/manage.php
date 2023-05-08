@@ -79,6 +79,18 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php
+                                
+                                ?>
+                                <tr class="employee_level_color elc_red">
+                                    <td class="tg-0lax"> <input type="checkbox"> </input></td>
+                                    <td class="tg-0lax">Kỳ Phong</td>
+                                    <td class="tg-0lax">1</td>
+                                    <td class="tg-0lax">Web Assignment</td>
+                                    <td class="tg-0lax">7</td>
+                                    <td class="tg-0lax">None</td>
+                                    <td class="tg-0lax">12th May</td>
+                                </tr>
                                 <tr class="employee_level_color elc_red">
                                     <td class="tg-0lax"> <input type="checkbox"> </input></td>
                                     <td class="tg-0lax">Kỳ Phong</td>
