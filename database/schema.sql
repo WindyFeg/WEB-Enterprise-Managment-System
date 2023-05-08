@@ -50,7 +50,7 @@ CREATE TABLE department (
 
 CREATE TABLE task (
     task_id INT(20) UNSIGNED AUTO_INCREMENT PRIMARY KEY ,
-    descrip TEXT ,
+    descrip LONGBLOB ,
     deadline datetime ,
     comment TEXT ,
     boss_id INT(11) ,
@@ -61,7 +61,7 @@ CREATE TABLE result (
     result_id INT(20) UNSIGNED AUTO_INCREMENT PRIMARY KEY ,
     task_id INT(11) NOT NULL ,
     -- file??
-    res TEXT NOT NULL ,
+    res LONGBLOB NOT NULL ,
     comment TEXT ,
     boss_id INT(11),
     emp_id INT(11) NOT NULL ,
