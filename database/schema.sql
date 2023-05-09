@@ -59,7 +59,8 @@ CREATE TABLE employee (
 
 CREATE TABLE task (
     task_id INT(20) UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY ,
-    descrip LONGBLOB ,
+    -- file path
+    descrip TEXT , 
     deadline datetime ,
     comment TEXT ,
     boss_id INT(11) UNSIGNED ,
@@ -71,7 +72,8 @@ CREATE TABLE result (
 --     NOT NULL in task_id will raise error in create table
     task_id INT(20) UNSIGNED , 
     -- file??
-    res LONGBLOB NOT NULL ,
+    -- file path
+    res TEXT ,
     comment TEXT ,
     boss_id INT(11) UNSIGNED ,
     emp_id INT(11) UNSIGNED NOT NULL ,
