@@ -18,7 +18,8 @@ if ($_FILES['userfile']['tmp_name']) {
         //Need to find taskid hereee
         $taskid = 1 ;
         
-        $upload = "UPDATE task SET descrip=".$uploadfile." WHERE task_id=".$taskid."" ;
+        // $upload = "UPDATE task SET descrip=".$uploadfile." WHERE task_id=".$taskid."" ;
+        $upload = "INSERT INTO task(task_id, descrip) VALUES (".$taskid.", ".$uploadfile.")" ;
         if (mysqli_query($conn , $upload)) {
             echo "Task Description submitted.\r\n" ;
             echo "File uploaded.\r\n" ;
