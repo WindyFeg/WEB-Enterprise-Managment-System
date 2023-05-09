@@ -199,3 +199,4 @@ VALUES (12, 1, CURRENT_TIMESTAMP, NULL);
 
 INSERT INTO employee (id, dept, start_dt, dir)
 VALUES (13, 2, CURRENT_TIMESTAMP, NULL);
+
