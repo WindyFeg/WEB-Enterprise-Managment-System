@@ -139,7 +139,7 @@
                 </div>
             </div>
             <div class="assign_function">
-                <button class="btn assign_btn">
+                <!-- <button class="btn assign_btn">
                     <svg id="assign-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                         <path
                             d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
@@ -148,10 +148,10 @@
                     Assign
                 </button>
                 <button disabled style="visibility: hidden;">
-                    <form>
-                        <input id="fileinput" type="file" style="display:none;" />
+                    <form action="../database/uploadtask.php" method="post" enctype="multipart/form-data">
+                        <input id="fileinput" type="file" style="display:none;" name="userfile" />
                     </form>
-                    <button id="falseinput" class="btn file_btn">
+                    <button id="falseinput" class="btn file_btn" type="submit">
                         <svg id="file-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                             <path
                                 d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128z" />
@@ -159,8 +159,16 @@
                         File
                     </button>
                     <span id="selected_filename">No file selected</span>
-                </button>
+                </button> -->
 
+                <form action="../database/uploadtask.php" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="file" name="userfile" id="userfile" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="submit" value="Upload" class="btn btn-info" />
+                    </div>
+                </form>
             </div>
 
         </div>
@@ -176,7 +184,9 @@
     });
     $('#fileinput').change(function () {
         $('#selected_filename').text($('#fileinput')[0].files[0].name);
+        AddTask($('#fileinput')[0].files[0])
     });
+
 
     function AddComment() {
         cmt = document.getElementById("comment_input").value;
