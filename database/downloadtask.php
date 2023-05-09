@@ -26,6 +26,7 @@ if (mysqli_num_rows($result) > 0) {
             //Clear output buffer
             flush() ;
             
+            //download file
             readfile($task) ;
             die() ;
         }
