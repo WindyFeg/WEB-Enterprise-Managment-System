@@ -1,12 +1,25 @@
 <?php
+// Form validation Server side 
+if (isset($_POST['submit'])) {
 
-// login
-if (isset($_GET['username']) && isset($_GET['password'])) {
-    $username = $_GET['username'];
-    $password = $_GET['password'];
+    require_once '../database/database.php';
+    require_once '../utils/function.php';
 
-    //Check username password in database, handle login
+    $username = serverCheckValidity($_POST['username']);
+    $password = serverCheckValidity($_POST['password']);
 
-    // return data session
+    echo $username;
+    echo $password;
 
+    //$ Check for empty input
+    if (emptyInputLogin($username, $password) !== false) {
+        header("location: ../index.php?page=login&error=emptyinput");
+        exit();
+    }
+
+    //$ Check if user exists
+    loginUser($conn, $username, $password);
+} else {
+    header("location: ../index.php?page=home");
+    exit();
 }

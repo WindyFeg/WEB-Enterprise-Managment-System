@@ -15,9 +15,8 @@ session_start();
 
 <div> THIS IS HEADER</div>
 <!-- Login UI -->
-<form action="/sever/authentication.php">
+<form action="../sever/authentication.php" method="post">
     <input type="text" name="username" placeholder="Username">
     <input type="password" name="password" placeholder="Password">
-    <button type="submit">Login</button>
-
+    <button type="submit" name="submit">Login</button>
 </form>

@@ -28,8 +28,8 @@ if (mysqli_query($connect, $database)) {
     echo "Error creating database: " . mysqli_error($connect) . "\r\n";
 }
 
-include("createtable.php") ;
+include("createtable.php");
 
-// mysqli_close($connect);
+mysqli_close($connect);
 
 ?>
