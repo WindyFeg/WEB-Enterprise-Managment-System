@@ -16,7 +16,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-mysqli_query($conn, "DROP PROCEDURE IF EXISTS `addComment` ; ") ;
+mysqli_query($conn, "DROP PROCEDURE IF EXISTS `addComment` ; ");
 $pro = "
 CREATE PROCEDURE `addComment` (
     IN id INT, 
@@ -30,25 +30,18 @@ BEGIN
         UPDATE result SET comment = cmt WHERE result_id = id ;
     END IF ;
 END ;
-" ;
+";
 if (mysqli_query($conn, $pro)) {
-    echo "Procedures created";
-    // $result = mysqli_use_result($conn) ;
-    // mysqli_free_result($result) ;
-    // while(mysqli_more_results($conn))
-    // {
-    //     mysqli_next_result($conn);
-    // }
-} 
-else {
-    echo "Error creating procedures: " . mysqli_error($conn);
+    echo "Procedure created";
+} else {
+    echo "Error creating procedure: " . mysqli_error($conn);
 }
 
-mysqli_query($conn, "DROP FUNCTION IF EXISTS `takeComment` ;") ;
+mysqli_query($conn, "DROP FUNCTION IF EXISTS `takeComment` ;");
 $pro = "
 CREATE FUNCTION `takeComment` (
     IN id INT, 
-    IN isTask BOOLEAN, 
+    IN isTask BOOLEAN
 )
 RETURNS TEXT 
 BEGIN
@@ -62,15 +55,13 @@ BEGIN
     END IF ;
     RETURN cmt ;
 END ;
-" ;
+";
 if (mysqli_query($conn, $pro)) {
     echo "Function created";
-    // $result = mysqli_use_result($conn) ;
-    // mysqli_free_result($result) ;
-} 
-else {
-    echo "Error creating Funcition: " . mysqli_error($conn);
+} else {
+    echo "Error creating function: " . mysqli_error($conn);
 }
 
-mysqli_close($conn) ;
+mysqli_close($conn);
+
 ?>

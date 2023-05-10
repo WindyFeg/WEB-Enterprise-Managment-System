@@ -201,7 +201,6 @@
         //! temp
         id = document.getElementsByClassName("comment_view")[0].innerText.split("TaskID: ")[1].split("\n")[0];
 
-
         cmt = document.getElementById("comment_input").value;
         document.getElementById("comment_input").value = "";
 
@@ -209,7 +208,6 @@
         xhttp.onload = function () {
             document.getElementsByClassName("comment_view")[0].innerHTML = this.responseText;
         }
-        cmt = "";
         xhttp.open("GET", "../sever/comment_processing.php?data=" + id + "//" + cmt, true);
         xhttp.send();
     }
