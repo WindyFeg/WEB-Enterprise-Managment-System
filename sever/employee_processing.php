@@ -15,7 +15,7 @@ if ($DepartmentId != 0) {
 if ($result->num_rows > 0) {
     header("Content-type: text/xml");
     while ($row = $result->fetch_assoc()) {
-        echo "<tr class='employee_level_color elc_red' name=" . $row["id"] . ">";
+        echo "<tr class='employee_level_color elc_red' name=" . $row["id"] . " onclick={getCmtEmployee(" . $row["id"] . ")}>";
         echo "<td  > <input type='checkbox'> </input></td>";
         echo "<td >" . $row["fname"] . "</td>";
         echo "<td > " . $row["lv"] . "</td>";
@@ -28,7 +28,7 @@ if ($result->num_rows > 0) {
         echo "</tr>";
     }
 } else {
-    echo '<tr class="employee_level_color elc_red">';
+    echo '<tr class="employee_level_color elc_red" >';
     echo '<td > <input type="checkbox"> </input></td>';
     echo '<td >NO EMPLOYEE FOUND !!!</td>';
     echo '<td >?</td>';

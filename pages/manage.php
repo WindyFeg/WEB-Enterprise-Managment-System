@@ -115,7 +115,7 @@
             </div>
             <div>
                 <input type="text" id="comment_input">
-                <button onclick={AddComment()} class="btn comment_btn">Comment </button>
+                <button onclick={AddCommentTask()} class="btn comment_btn">Comment </button>
             </div>
         </div>
     </div>
@@ -187,15 +187,31 @@
         AddTask($('#fileinput')[0].files[0])
     });
 
+    function getCmtEmployee(id) {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+            document.getElementsByClassName("comment_view")[0].innerHTML = this.responseText;
+        }
+        cmt = "";
+        xhttp.open("GET", "../sever/comment_processing.php?data=" + id + "//" + cmt, true);
+        xhttp.send();
+    }
 
-    function AddComment() {
+    function AddCommentTask() {
+        //! temp
+        id = document.getElementsByClassName("comment_view")[0].innerText.split("TaskID: ")[1].split("\n")[0];
+
+
         cmt = document.getElementById("comment_input").value;
         document.getElementById("comment_input").value = "";
-        document.getElementsByClassName("comment_view")[0].innerHTML
-            += "<div>Me: " + cmt + "</div>";
 
-
-        // add to database section
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+            document.getElementsByClassName("comment_view")[0].innerHTML = this.responseText;
+        }
+        cmt = "";
+        xhttp.open("GET", "../sever/comment_processing.php?data=" + id + "//" + cmt, true);
+        xhttp.send();
     }
 
     function home() {
