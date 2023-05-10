@@ -1,7 +1,7 @@
 <?php
 include_once "database.php";
 
-#1.2Mb 
+#20Mb 
 $require = 1024 * 20 * 8;
 
 if (isset($_POST['submit'])) {
@@ -22,11 +22,12 @@ if (isset($_POST['submit'])) {
 
         if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
 
-            //Need to find taskid hereee
-            $taskid = 1;
+            $filePointer = fopen($uploadfile, 'r');
+            $fileData = fread($filePointer, filesize($uploadfile));
+            $fileData = addslashes($fileData);
 
-            // $upload = "UPDATE task SET descrip=".$uploadfile." WHERE task_id=".$taskid."" ;
-            $upload = "INSERT INTO task(task_id, descrip) VALUES (" . $taskid . ", " . $uploadfile . ")";
+            $upload = "INSERT INTO task(descrip, deadline,  boss_id) VALUES ('$fileData', CURRENT_TIMESTAMP, '1');";
+
             if (mysqli_query($conn, $upload)) {
                 echo "Task Description submitted.\r\n";
                 echo "File uploaded.\r\n";
