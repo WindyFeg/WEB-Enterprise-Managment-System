@@ -59,7 +59,9 @@ CREATE TABLE employee (
 
 CREATE TABLE task (
     task_id INT(20) UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY ,
-    -- file path
+    
+    -- file path -> content
+    tName TEXT , 
     descrip TEXT , 
     deadline datetime ,
     comment TEXT ,

@@ -1,0 +1,4 @@
+task/upload/*.txt
+task/upload/*.doc
+task/upload/*.docx
+task/upload/*.pdf

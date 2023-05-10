@@ -75,7 +75,7 @@
     <div class="mn_employeeList">
         <div class="mn_employee_container">
             <div class="btn_assign">
-                <button class="btn_employee">
+                <button class="btn_employee" onclick={AssignListEmployee()}>
                     Assign Task
                 </button>
             </div>
@@ -122,7 +122,6 @@
     <div class="mn_detail">
         <div class="mn_detail_container">
             <div class="detail_view">
-                KY PHONG
             </div>
             <div class="detail_refresh">
                 <button class="btn refresh_btn">Refresh</button>
@@ -132,11 +131,13 @@
     <div class="mn_assign">
         <div class="mn_assign_container">
             <div class="assign_view">
-                <div class="assign_taskName">Web Assignment</div>
-                <div class="assign_fileName">Assignment Specification</div>
-                <div class="assign_taskInfo">Submitted date: 11/5
-                    File size: 1.2Mb
+                <div class="assign_taskName">Name task: </div>
+                <div class="assign_fileName">File size: </div>
+                <div class="assign_taskInfo">
+                    Deadline:
+                    <input type="date" id="deadline" disabled>
                 </div>
+                <div id="uploadnotify" style="color: red;"> Please select employee to upload task!</div>
             </div>
             <div class="assign_function">
                 <!-- <button class="btn assign_btn">
@@ -160,13 +161,15 @@
                     </button>
                     <span id="selected_filename">No file selected</span>
                 </button> -->
-
-                <form action="../database/uploadtask.php" method="post" enctype="multipart/form-data">
+                <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+                <form action="../database/uploadtask.php" method="post" enctype="multipart/form-data"
+                    target="dummyframe">
                     <div class="form-group">
-                        <input type="file" name="userfile" id="userfile" />
+                        <input type="file" name="userfile" id="userfile" disabled />
                     </div>
                     <div class="form-group">
-                        <input type="submit" name="submit" value="Upload" class="btn btn-info" />
+                        <input id="submitfile" type="submit" onclick={AssignTaskToListEmployee()} name="submit"
+                            value="Upload task" class="btn btn-info" disabled>
                     </div>
                 </form>
             </div>
@@ -177,6 +180,8 @@
 
 
 <script>
+    var listEmployeeId = [];
+
     $(document).ready(function () {
         $('#falseinput').click(function () {
             $("#fileinput").click();
@@ -216,6 +221,54 @@
         header("location: ../index.php?page=manage");
     }
 
+    function AssignListEmployee() {
+        var ListEmployee = document.getElementsByClassName("employee_checkbox");
+        var Listchecked = [];
+        for (let i = 0; i < ListEmployee.length; i++) {
+            if (ListEmployee[i].checked) {
+                Listchecked.push(ListEmployee[i]);
+            }
+        }
+        let now = new Date();
+        let timeStr = now.toLocaleTimeString();
 
+        document.getElementsByClassName("detail_view")[0].innerHTML += "<div class='assign_notify'>" + timeStr + ": " + Listchecked.length + " Employee selected </div>"
+        for (let i = 0; i < Listchecked.length; i++) {
+            listEmployeeId.push(Listchecked[i].name);
+        }
+        console.log(listEmployeeId);
+        UploadPermission(true);
+
+    }
+
+    function UploadPermission(bool) {
+
+        document.getElementById("uploadnotify").style.visibility = "hidden";
+        document.getElementById("deadline").disabled = !bool;
+        document.getElementById("submitfile").disabled = !bool;
+        document.getElementById("userfile").disabled = !bool;
+
+    }
+
+
+    function AssignTaskToListEmployee() {
+        console.log(listEmployeeId.join(','))
+
+
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+            let now = new Date();
+            let timeStr = now.toLocaleTimeString();
+            document.getElementsByClassName("detail_view")[0].innerHTML += "<div> " + timeStr + ": " + this.responseText + "</div>";
+            document.getElementsByClassName("detail_view")[0].innerHTML += "<div> " + timeStr + ": " + "Employee with ID: " + listEmployeeId.join(',') + " Has been Assigned </div>"
+
+            UploadPermission(false);
+        }
+        xhttp.open("GET", "../sever/assign_processing.php?idlist=" + listEmployeeId.join(','), true);
+        xhttp.send();
+        let now = new Date();
+        let timeStr = now.toLocaleTimeString();
+        document.getElementsByClassName("detail_view")[0].innerHTML += "<div>" + timeStr + ": " + " Processing...</div>";
+    }
 
 </script>
