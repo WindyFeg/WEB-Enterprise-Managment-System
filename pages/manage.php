@@ -161,17 +161,17 @@
                     </button>
                     <span id="selected_filename">No file selected</span>
                 </button> -->
-                <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+                <!-- <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
                 <form action="../database/uploadtask.php" method="post" enctype="multipart/form-data"
-                    target="dummyframe">
-                    <div class="form-group">
-                        <input type="file" name="userfile" id="userfile" disabled />
-                    </div>
-                    <div class="form-group">
-                        <input id="submitfile" type="submit" onclick={AssignTaskToListEmployee()} name="submit"
-                            value="Upload task" class="btn btn-info" disabled>
-                    </div>
-                </form>
+                    target="dummyframe"> -->
+                <div class="form-group">
+                    <input type="file" name="userfile" id="userfile" disabled />
+                </div>  
+                <div class="form-group">
+                    <input id="submitfile" type="submit" onclick={AssignTaskToListEmployee()} name="submit"
+                        value="Upload task" class="btn btn-info" disabled>
+                </div>
+                <!-- </form> -->
             </div>
 
         </div>
@@ -190,6 +190,10 @@
     $('#fileinput').change(function () {
         $('#selected_filename').text($('#fileinput')[0].files[0].name);
         AddTask($('#fileinput')[0].files[0])
+    });
+
+    document.getElementById('userfile').addEventListener('change', function () {
+        document.getElementById('submitfile').disabled = false;
     });
 
     function getCmtEmployee(id) {
@@ -252,16 +256,29 @@
 
 
     function AssignTaskToListEmployee() {
-        console.log(listEmployeeId.join(','))
 
+        var file = document.getElementById('userfile').files[0];
+        var formData = new FormData();
+        formData.append('userfile', file);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '../database/uploadtask.php', true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                let now = new Date();
+                let timeStr = now.toLocaleTimeString();
+                document.getElementsByClassName("detail_view")[0].innerHTML += "<div>" + timeStr + ": " + xhr.responseText + "</div>";
+            }
+        };
+        xhr.send(formData);
+
+        //!____________________________
 
         const xhttp = new XMLHttpRequest();
         xhttp.onload = function () {
             let now = new Date();
             let timeStr = now.toLocaleTimeString();
             document.getElementsByClassName("detail_view")[0].innerHTML += "<div> " + timeStr + ": " + this.responseText + "</div>";
-            document.getElementsByClassName("detail_view")[0].innerHTML += "<div> " + timeStr + ": " + "Employee with ID: " + listEmployeeId.join(',') + " Has been Assigned </div>"
-
             UploadPermission(false);
         }
         xhttp.open("GET", "../sever/assign_processing.php?idlist=" + listEmployeeId.join(','), true);

@@ -5,12 +5,12 @@ include_once "database.php";
 #20Mb 
 $require = 1024 * 20 * 8;
 
-if (isset($_POST['submit'])) {
+if (isset($_FILES['userfile'])) {
     # If file uploaded
     if ($_FILES['userfile']['tmp_name']) {
         //Check size requirement 
-        echo "DUNG LƯỢNG FILE :\n";
-        echo $_FILES['userfile']['size'];
+        echo "File size :\n";
+        echo $_FILES['userfile']['size'] . " byte";
 
         if ($_FILES['userfile']['size'] > $require) {
             exit('File size exceeds maximum requirement.');
@@ -18,8 +18,8 @@ if (isset($_POST['submit'])) {
         $uploaddir = '../task/upload/';
         $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
 
-        echo "   ĐƯỜNG DẪN :\n";
-        echo $uploadfile;
+        echo "<div>File Location :\n";
+        echo $uploadfile . "</div>";
 
         if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
 
@@ -34,19 +34,15 @@ if (isset($_POST['submit'])) {
 
             if (mysqli_query($conn, $upload)) {
 
-                echo $fileName;
                 $sql = "SELECT * FROM `task` WHERE tName = '$fileName'";
-                echo $sql;
                 $result = $conn->query($sql);
                 $res = $result->fetch_assoc();
 
-
-                echo "--------";
-                echo $res['task_id'];
+                echo "<div>------------</div>";
+                echo "Task ID: " . $res['task_id'];
                 $_SESSION['task_id'] = $res['task_id'];
 
-                echo "Task Description submitted.\r\n";
-                echo "File uploaded.\r\n";
+                echo "Task Description submitted successfully\r\n";
             } else {
                 echo "Failed to submit task.\r\n";
             }
@@ -54,5 +50,7 @@ if (isset($_POST['submit'])) {
             echo "Failed to upload file.\r\n";
         }
     }
+} else {
+    echo "Failed no 'userfile' set!";
 }
 ?>
