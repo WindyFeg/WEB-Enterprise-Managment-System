@@ -37,30 +37,30 @@ if (mysqli_query($conn, $pro)) {
     echo "Error creating procedure: " . mysqli_error($conn);
 }
 
-mysqli_query($conn, "DROP FUNCTION IF EXISTS `takeComment` ;");
-$pro = "
-CREATE FUNCTION `takeComment` (
-    IN id INT, 
-    IN isTask BOOLEAN
-)
-RETURNS TEXT 
-BEGIN
-    DECLARE cmt TEXT ;
-    IF isTask = true THEN
-        SELECT comment INTO cmt 
-        FROM task WHERE task_id = id ;
-    ELSE
-        SELECT comment INTO cmt 
-        FROM result WHERE result_id = id ;
-    END IF ;
-    RETURN cmt ;
-END ;
-";
-if (mysqli_query($conn, $pro)) {
-    echo "Function created";
-} else {
-    echo "Error creating function: " . mysqli_error($conn);
-}
+// mysqli_query($conn, "DROP FUNCTION IF EXISTS `takeComment` ;");
+// $pro = "
+// CREATE FUNCTION `takeComment` (
+//     IN id INT, 
+//     IN isTask BOOLEAN
+// )
+// RETURNS TEXT 
+// BEGIN
+//     DECLARE cmt TEXT ;
+//     IF isTask = true THEN
+//         SELECT comment INTO cmt 
+//         FROM task WHERE task_id = id ;
+//     ELSE
+//         SELECT comment INTO cmt 
+//         FROM result WHERE result_id = id ;
+//     END IF ;
+//     RETURN cmt ;
+// END ;
+// ";
+// if (mysqli_query($conn, $pro)) {
+//     echo "Function created";
+// } else {
+//     echo "Error creating function: " . mysqli_error($conn);
+// }
 
 mysqli_close($conn);
 
