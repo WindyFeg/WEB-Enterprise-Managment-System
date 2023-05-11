@@ -41,7 +41,7 @@ if (isset($_FILES['userfile'])) {
                 echo "<div>------------</div>";
                 echo "Task ID: " . $res['task_id'];
                 $_SESSION['task_id'] = $res['task_id'];
-
+                echo $_SESSION['task_id'];
                 echo "Task Description submitted successfully\r\n";
             } else {
                 echo "Failed to submit task.\r\n";

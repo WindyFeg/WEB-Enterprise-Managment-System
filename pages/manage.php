@@ -42,33 +42,6 @@
                         Deadline 1
                     </a>
                 </div>
-                <div class="deadline_tab">
-                    <a>
-                        <svg class="deadline-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                            <path
-                                d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384v38.6C310.1 219.5 256 287.4 256 368c0 59.1 29.1 111.3 73.7 143.3c-3.2 .5-6.4 .7-9.7 .7H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128zm48 96a144 144 0 1 1 0 288 144 144 0 1 1 0-288zm0 240a24 24 0 1 0 0-48 24 24 0 1 0 0 48zm0-192c-8.8 0-16 7.2-16 16v80c0 8.8 7.2 16 16 16s16-7.2 16-16V288c0-8.8-7.2-16-16-16z" />
-                        </svg>
-                        Deadline 4
-                    </a>
-                </div>
-                <div class="deadline_tab">
-                    <a>
-                        <svg class="deadline-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                            <path
-                                d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384v38.6C310.1 219.5 256 287.4 256 368c0 59.1 29.1 111.3 73.7 143.3c-3.2 .5-6.4 .7-9.7 .7H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128zm48 96a144 144 0 1 1 0 288 144 144 0 1 1 0-288zm0 240a24 24 0 1 0 0-48 24 24 0 1 0 0 48zm0-192c-8.8 0-16 7.2-16 16v80c0 8.8 7.2 16 16 16s16-7.2 16-16V288c0-8.8-7.2-16-16-16z" />
-                        </svg>
-                        Deadline 3
-                    </a>
-                </div>
-                <div class="deadline_tab">
-                    <a>
-                        <svg class="deadline-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                            <path
-                                d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384v38.6C310.1 219.5 256 287.4 256 368c0 59.1 29.1 111.3 73.7 143.3c-3.2 .5-6.4 .7-9.7 .7H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128zm48 96a144 144 0 1 1 0 288 144 144 0 1 1 0-288zm0 240a24 24 0 1 0 0-48 24 24 0 1 0 0 48zm0-192c-8.8 0-16 7.2-16 16v80c0 8.8 7.2 16 16 16s16-7.2 16-16V288c0-8.8-7.2-16-16-16z" />
-                        </svg>
-                        Deadline 2
-                    </a>
-                </div>
             </div>
         </div>
     </div>
@@ -77,6 +50,9 @@
             <div class="btn_assign">
                 <button class="btn_employee" onclick={AssignListEmployee()}>
                     Assign Task
+                </button>
+                <button class="btn_employee" onclick={DeleteTask()}>
+                    Delete Task
                 </button>
             </div>
             <div class="list_employee">
@@ -166,7 +142,7 @@
                     target="dummyframe"> -->
                 <div class="form-group">
                     <input type="file" name="userfile" id="userfile" disabled />
-                </div>  
+                </div>
                 <div class="form-group">
                     <input id="submitfile" type="submit" onclick={AssignTaskToListEmployee()} name="submit"
                         value="Upload task" class="btn btn-info" disabled>
@@ -195,6 +171,22 @@
     document.getElementById('userfile').addEventListener('change', function () {
         document.getElementById('submitfile').disabled = false;
     });
+
+    function ClickOnEmployee(taskid, id) {
+        getCmtEmployee(taskid);
+        getTaskDetail(taskid);
+    }
+
+    function getTaskDetail(id) {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+            let now = new Date();
+            let timeStr = now.toLocaleTimeString();
+            document.getElementsByClassName("detail_view")[0].innerHTML += timeStr + ": " + this.responseText;
+        }
+        xhttp.open("GET", "../sever/task_detail.php?data=" + id, true);
+        xhttp.send();
+    }
 
     function getCmtEmployee(id) {
         const xhttp = new XMLHttpRequest();
@@ -225,6 +217,8 @@
         header("location: ../index.php?page=manage");
     }
 
+
+
     function AssignListEmployee() {
         var ListEmployee = document.getElementsByClassName("employee_checkbox");
         var Listchecked = [];
@@ -243,6 +237,16 @@
         console.log(listEmployeeId);
         UploadPermission(true);
 
+    }
+
+    function DeleteTask() {
+        AssignListEmployee(); // Get list employee id
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+            document.getElementsByClassName("detail_view")[0].innerHTML = this.responseText;
+        }
+        xhttp.open("GET", "../sever/delete_task.php?data=" + listEmployeeId.join(','), true);
+        xhttp.send();
     }
 
     function UploadPermission(bool) {

@@ -173,6 +173,10 @@
 
   }
 
+  .form-group {
+      display: inline-block;
+  }
+
   .comment_btn {}
 
   #comment_input {

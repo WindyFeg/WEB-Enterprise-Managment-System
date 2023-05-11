@@ -1,41 +1,33 @@
 <?php
+session_start();
 
-// Need form for download task file. 
+require_once '../database/database.php';
 
-include_once "database.php";
-//Need post/get to have task_id here
-$taskid = 1;
-$sql = "SELECT * FROM task WHERE task_id=" . $taskid . "";
-$result = mysqli_query($conn, $sql);
+if (isset($_GET['path'])) {
+    //Read the filename
+    $filename = $_GET['path'];
+    //Check the file exists or not
+    if (file_exists($filename)) {
 
-if (mysqli_num_rows($result) > 0) {
-    while ($row = mysqli_fetch_assoc($result)) {
-        $dir = '/task/upload/';
-        $task = $dir . $row["descrip"];
+        //Define header information
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        header("Cache-Control: no-cache, must-revalidate");
+        header("Expires: 0");
+        header('Content-Disposition: attachment; filename="' . basename($filename) . '"');
+        header('Content-Length: ' . filesize($filename));
+        header('Pragma: public');
 
-        if (file_exists($task)) {
-            //Define http header
-            header('Content-Description: File Transfer');
-            header('Content-Type: application/octet-stream');
-            header("Cache-Control: no-cache, must-revalidate");
-            header("Expires: 0");
-            header('Content-Disposition: attachment; filename="' . basename($task) . '"');
-            header('Content-Length: ' . filesize($task));
-            header('Pragma: public');
+        //Clear system output buffer
+        flush();
 
-            //Clear output buffer
-            flush();
+        //Read the size of the file
+        readfile($filename);
 
-            //download file
-            readfile($task);
-            die();
-        } else {
-            echo "Cannot found task.\r\n";
-        }
+        //Terminate from the script
+        die();
+    } else {
+        echo "File does not exist.";
     }
-}
-
-header("http://localhost/index.php?manageid=1");
-
-
-?>
+} else
+    echo "Filename is not defined.";

@@ -5,9 +5,11 @@ require_once '../database/database.php';
 
 $idlist = explode(',', $_REQUEST["idlist"]);
 
-sleep(4);
+$sql = "SELECT * FROM `task` ORDER BY task_id DESC LIMIT 1";
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
+$taskid = $row['task_id'];
 
-$taskid = $_SESSION['task_id'];
 $sql = "";
 for ($x = 0; $x < count($idlist); $x++) {
     $idtemp = $idlist[$x];
