@@ -1,5 +1,9 @@
 <?php
-// Form validation Server side 
+session_start();
+?>
+
+<?php
+//Form validation Server side 
 if (isset($_POST['submit'])) {
 
     require_once '../database/database.php';
@@ -17,9 +21,11 @@ if (isset($_POST['submit'])) {
         exit();
     }
 
-    //$ Check if user exists
+    // //$ Check if user exists
     loginUser($conn, $username, $password);
 } else {
     header("location: ../index.php?page=home");
     exit();
 }
+
+//header ("Location: http://localhost/WEB-Enterprise-Managment-System/index.php?page=admin");

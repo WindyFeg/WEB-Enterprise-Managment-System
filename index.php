@@ -1,14 +1,26 @@
+
+<?php 
+session_start();
+if (!$_SESSION['department']) $_SESSION['department'] = 'User';
+
+ ?>
+ 
 <html lang="en">
 
 <body>
     <?php
-    include_once 'template/header.php';
+    include 'template/header.php';
     ?>
     <div class="body">
         <?php
         if (isset($_GET['page'])) {
+            // $page = $_GET['page'];
+            // include "pages/$page.php";
             $page = $_GET['page'];
-            include "pages/$page.php";
+            if ($page == 'admin') include "pages/adminpage.php";
+            else if ($page == 'employee') include "pages/employeepage.php";
+            else if ($page == 'department') include "pages/department.php";
+            else include "pages/fault.php";
         } else if (isset($_GET['manageid'])) {
             $_SESSION['manageid'] = $_GET['manageid'];
             include "pages/manage.php";
@@ -18,7 +30,7 @@
         ?>
     </div>
     <?php
-    include_once 'template/footer.php';
+    include 'template/footer.php';
     ?>
 </body>
 
