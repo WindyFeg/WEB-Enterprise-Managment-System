@@ -59,7 +59,7 @@ session_start();
         <a href="../index.php?page=home">home</a>
 
         <?php
-        if ($_SESSION['lv'] == 1) {
+        if ($_SESSION['lv'] == 1 || $_SESSION['lv'] == 2) {
             // echo '<a href="../index.php?page=depart">department</a>';
             echo '
             <div class="dropdown">
