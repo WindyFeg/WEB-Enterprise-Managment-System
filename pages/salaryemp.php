@@ -1,4 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap');
+<?php
+
+require_once ('process/dbh.php');
+$sql = "SELECT user.id,user.fname,user.lname, user.salary from user";
+
+//echo "$sql";
+$result = mysqli_query($conn, $sql);
+
+?>
+
+
+
+<html>
+<head>
+	<title>Salary Table | XYZ Corporation</title>
+	<link rel="stylesheet" type="text/css" href="styleview.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+    	@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap');
 
 :root{
     --main-color: #8e44ad;
@@ -77,45 +98,6 @@ section{
     color: var(--main-color);
 
 }
-<<<<<<< HEAD
-.heading-title{
-    text-align: center;
-    margin-bottom: 3rem;
-    font-size: 6rem;
-    text-transform: uppercase;
-    color: var(--black);
-}
-
-.admin{
-    position: sticky;
-    top:0; left: 0;right: 0;
-    z-index: 1000;
-    background-color: var(--white);
-    display: flex;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-shadow: var(--box-shadow);
-    align-items: center;
-    justify-content: space-between;
-}
-
-.admin .logo{
-    font-size:  2.5rem;
-    color: var(--black);
-}
-
-.admin .navbar a{
-    font-size: 2rem;
-    margin-left: 2rem;
-    color: var(--black);
-
-}
-.admin .navbar a:hover{
-    color: var(--main-color);
-
-}
-=======
->>>>>>> nguyen
 #menu-btn{
     font-size: 2.5rem;
     cursor: pointer;
@@ -284,3 +266,104 @@ section{
         font-size: 3.5rem;
     }
 }
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 0px;
+    z-index: 1;
+    max-height: 150px;
+    overflow-y: auto;
+}
+.front{
+    margin: 0px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+    </style>
+</head>
+<body>
+	
+	<section class="header">
+		<a href="home.php" class="logo">Comany</a>	
+		<nav>
+			<ul class="navbar">
+				<li><a class="" href="http://localhost/WEB-Enterprise-Managment-System/index.php">HOME</a></li>
+				
+				<div class="dropdown">
+                    <a href="">Options</a>
+                    <div class="dropdown-content"> 
+                        <li class="front"><a href="addemp.php">Add Employee</a></li>
+                        <li class="front"><a href="viewemp.php">View Employee</a></li>
+                        <li class="front"><a href="assign.php">Assign Project</a></li>
+                        <li class="front"><a href="assignproject.php">Project Status</a></li>
+                        <li class="front"><a href="salaryemp.php">Salary Table</a></li>
+                        <!-- <li class="front"><a href="empleave.php">Employee Leave</a></li> -->
+                    </div>
+                </div>
+                <div class="dropdown">
+            <!-- <span>Department</span> -->
+                <a href="">department</a>
+            <div class="dropdown-content">
+                <div><a href="http://localhost/WEB-Enterprise-Managment-System/pages/privateEmploy.php?name=IT">IT</a> </div>
+                <div><a href="http://localhost/WEB-Enterprise-Managment-System/pages/privateEmploy.php?name=CSE">CSE</a> </div>
+                <div><a href="http://localhost/WEB-Enterprise-Managment-System/pages/privateEmploy.php?name=Creative">Creative</a> </div>
+                <div><a href="http://localhost/WEB-Enterprise-Managment-System/pages/privateEmploy.php?name=Spacetech">SpaceTech</a> </div>
+                <div><a href="http://localhost/WEB-Enterprise-Managment-System/pages/privateEmploy.php?name=NetworkSecurity">NetworkSecurity</a> </div>
+                <div><a href="http://localhost/WEB-Enterprise-Managment-System/pages/privateEmploy.php?name=Defense">Defense</a> </div>
+                <div><a href="http://localhost/WEB-Enterprise-Managment-System/pages/privateEmploy.php?name=NLP">NLP</a> </div>
+                <div><a href="http://localhost/WEB-Enterprise-Managment-System/pages/privateEmploy.php?name=Manage">Manage</a> </div>
+                </div>
+            </div>
+				<li><a class="" href="alogin.html">Log Out</a></li>
+			</ul>
+		</nav>
+	</section>
+	 
+	<div class="divider"></div>
+	<div id="divimg">
+		
+	</div>
+	
+	<table>
+			<tr>
+				<th class = "center">Emp. ID</th>
+				<th class = "center">Name</th>
+			<!-- 	
+				
+				<th align = "center">Base Salary</th>
+				<th align = "center">Bonus</th> -->
+				<th class = "center">Salary</th>
+				
+				
+			</tr>
+			
+			<?php
+				while ($user = mysqli_fetch_assoc($result)) {
+					echo "<tr>";
+					echo "<td>".$user['id']."</td>";
+					echo "<td>".$user['fname']." ".$user['lname']."</td>";
+					
+					// echo "<td>".$user['base']."</td>";
+					// echo "<td>".$user['bonus']." %</td>";
+					echo "<td>".$user['salary']."</td>";
+					
+					
+
+				}
+
+
+			?>
+			
+			</table>
+</body>
+</html>

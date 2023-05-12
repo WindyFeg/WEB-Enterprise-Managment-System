@@ -1,4 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap');
+<?php
+
+
+require_once ('process/dbh.php');
+$sql = "SELECT id, firstName, lastName, points FROM employee, rank WHERE rank.eid = employee.id order by rank.points desc";
+$result = mysqli_query($conn, $sql);
+
+$mysql = "SELECT * FROM employee WHERE employee.id = '104'";
+$myResult = $conn->query($mysql);
+$departmentName = mysqli_fetch_all($myResult, MYSQLI_ASSOC);
+// echo $departmentName[0]['dept'];
+
+?>
+
+
+<html>
+<head>
+	<title>Admin Panel | XYZ Corporation</title>
+	<link rel="stylesheet" type="text/css" href="styleemplogin.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+    	@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap');
 
 :root{
     --main-color: #8e44ad;
@@ -77,45 +101,6 @@ section{
     color: var(--main-color);
 
 }
-<<<<<<< HEAD
-.heading-title{
-    text-align: center;
-    margin-bottom: 3rem;
-    font-size: 6rem;
-    text-transform: uppercase;
-    color: var(--black);
-}
-
-.admin{
-    position: sticky;
-    top:0; left: 0;right: 0;
-    z-index: 1000;
-    background-color: var(--white);
-    display: flex;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-shadow: var(--box-shadow);
-    align-items: center;
-    justify-content: space-between;
-}
-
-.admin .logo{
-    font-size:  2.5rem;
-    color: var(--black);
-}
-
-.admin .navbar a{
-    font-size: 2rem;
-    margin-left: 2rem;
-    color: var(--black);
-
-}
-.admin .navbar a:hover{
-    color: var(--main-color);
-
-}
-=======
->>>>>>> nguyen
 #menu-btn{
     font-size: 2.5rem;
     cursor: pointer;
@@ -284,3 +269,57 @@ section{
         font-size: 3.5rem;
     }
 }
+    </style>
+</head>
+<body>
+	
+	<section class="header">
+		<a href="home.php" class="logo">Comany</a>	
+		<nav>
+			<!-- <h1>Department name: <?php //echo $departmentName[0]['dept']; ?></h1> -->
+			<ul class="navbar">
+				<li><a class="" href="aloginwel.php">HOME</a></li>
+				<li><a class="" href="addemp.php">Add Employee</a></li>
+				<li><a class="" href="viewemp.php">View Employee</a></li>
+				<li><a class="" href="assign.php">Assign Project</a></li>
+				<li><a class="" href="assignproject.php">Project Status</a></li>
+				<li><a class="" href="salaryemp.php">Salary Table</a></li>
+				<!-- <li><a class="" href="empleave.php">Employee Leave</a></li> -->
+				<a class="" href="alogin.html">Log Out</a>
+			</ul>
+		</nav>
+	</section>
+
+
+	<div class="divider"></div>
+	<div id="divimg">
+		<h2 style="font-family: 'Montserrat', sans-serif; font-size: 25px; text-align: center;">Empolyee Leaderboard </h2>
+    	<table>
+			<tr bgcolor="">
+				<th align = "center">Seq.</th>
+				<th align = "center">Emp. ID</th>
+				<th align = "center">Name</th>
+			</tr>
+
+			<?php
+				$seq = 1;
+				while ($employee = mysqli_fetch_assoc($result)) {
+					echo "<tr>";
+					echo "<td>".$seq."</td>";
+					echo "<td>".$employee['id']."</td>";
+					
+					echo "<td>".$employee['fname']." ".$employee['lname']."</td>";
+					
+					
+					$seq+=1;
+				}
+			?>
+
+		</table>
+
+		<div class="p-t-20">
+			<button><a href="reset.php" > Reset Points</button>
+		</div>
+	</div>
+</body>
+</html>
