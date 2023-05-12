@@ -1,0 +1,208 @@
+html {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.navbar-main {
+    position: fixed;
+    top: 50px;
+    z-index: 1;
+    width: 100%;
+    display: none;
+}
+
+.main {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: #F5F5F7;
+}
+
+.footer {
+    width: 100%;
+    height: 200px;
+    background-color: #F5F5F7;
+    border: 1px solid black;
+}
+
+.my-class {
+    background-color: #b1bc8755;
+    display: inline-block;
+}
+
+.item-footer {
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    line-height: 200px;
+}
+
+
+.content {
+    display: flex;
+}
+
+
+.main-contain {
+    width: calc(100% - 120px);
+    height: 500px;
+    flex: 5;
+    background-color: yellow;
+}
+
+.card-config {
+    display: inline-block;
+    margin: 4px;
+}
+
+.header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    color: #CCCCCC;
+}
+
+.apple-icon {
+    font-size: 30px;
+    padding: 0 20px;
+    display: inline-block;
+}
+
+.btn-login {
+    width: 120px;
+}
+
+.btn-store {
+    width: 100px;
+}
+
+
+.my-form {
+    width: 400px;
+}
+
+.padding-left {
+    padding-left: 20px;
+}
+
+.new-footer {}
+
+.searching {
+    text-align: center;
+}
+
+/* -------- CONTENT OF HOMEPAGE -------- */
+/* use */
+.w-frame-homepage {
+    height: 692px;
+    width: 100%;
+}
+
+/* use */
+.w-tag-homepage {
+    height: 692px;
+}
+
+/* use */
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* use */
+@media (max-width: 992px) {
+    .w-frame-homepage {
+        height: 500px;
+        width: 100%;
+    }
+
+    .w-tag-homepage {
+        height: 1000px;
+    }
+}
+
+/* use */
+.w-btn-navbar:hover {
+    color: white;
+    cursor: pointer;
+    height: 100%;
+}
+
+/* use */
+.w-btn-navbar {
+    color: #D9D9DA;
+    background-color: #444444;
+    border: none;
+    height: 100%;
+}
+
+/* use */
+input#idSearchAjax {
+    background-color: #444444;
+    color: white;
+}
+
+/* use */
+#w-ajax-searching {
+    position: absolute;
+    background-color: #F5F5F5;
+    width: 100%;
+    list-style-type: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index: 5;
+}
+
+/* use */
+.w-form-navbar {
+    border: 1px solid #D9D9DA;
+    border-radius: 2px;
+    height: 100%;
+}
+
+/* SECTION: Validation login */
+input#exampleInputEmail1,
+input#exampleInputPassword1 {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+/* Style the container for inputs */
+.container {
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+/* use */
+.valid {
+    display: none;
+}
+
+/* use */
+.invalid {
+    display: block;
+}
+
+/* use */
+#validatePasswordId {
+    display: none;
+}
+
+/* use */
+.login-layout {
+    margin: auto;
+    max-width: 500px;
+    padding: 10px;
+}
+
+/* SECTION: Dashboard login */
+.w-dashboard {
+    width: 100%;
+    background-color: #FFFFFF;
+    border: 1px solid #DFDFDF;
+}

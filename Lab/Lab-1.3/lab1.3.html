@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.3</title>
+    <style>
+        html {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            background-color: #fff;
+            width: 500px;
+            height: 370px;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        button {
+            margin-top: 10px;
+            display: inline-block;
+            width: 140px;
+            height: 50px;
+            font-size: 16px;
+            margin-left: 20px;
+            margin-right: 20px;
+            font-weight: 550;
+            background-color: #ccc;
+            color: #00464B;
+            border-radius: 10px;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: #fff;
+        }
+
+        .text {
+            text-align: center;
+            padding-top: 5px;
+        }
+
+        .inblock {
+            display: inline-block;
+            width: 300px;
+        }
+
+        .arr {
+            margin-left: 20px;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="text">Lab 1.3 sorting</h2>
+        <div id="arr" class="arr">Array: </div>
+
+        <button onclick="findMax()">Show Max</button>
+        <div class="inblock" id="findMaxId">Unkown</div>
+
+        <button onclick="findMin()">Show Min</button>
+        <div class="inblock" id="findMinId">Unkown</div>
+
+        <button onclick="sortToMax()">Sort Min to Max</button>
+        <div class="inblock" id="sortToMaxId">Unkown</div>
+
+        <button onclick="sortToMin()">Sort Max to Min</button>
+        <div class="inblock" id="sortToMinId">Unkown</div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>

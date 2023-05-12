@@ -1,6 +1,6 @@
-HOME
-<div> Manage </div>
-<a href="http://localhost/index.php?page=department">Manage</a>
+<!-- HOME -->
+<!-- <div> Manage </div> -->
+<!-- <a href="http://localhost/index.php?page=department">Manage</a> -->
 <?php
 if (isset($_GET['error'])) {
     if ($_GET['error'] == "wronglogin") {

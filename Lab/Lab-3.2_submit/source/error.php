@@ -1,0 +1,1 @@
+<?php echo "Fault when trying accessing page"?>
