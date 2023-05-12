@@ -73,8 +73,21 @@ session_start();
                 <div><a href="index.php?page=viewemp&&name=IT">IT</a> </div>
                 </div>
             </div>
+            <div class="dropdown">
+            <a href="">Options</a>
+            <div class="dropdown-content"> 
+                
+                <div class="front"><a href="index.php?page=addemp">Add Employee</a> </div>
+                <div class="front"><a href="index.php?page=viewemp">View Employee</a></div>
+                <div class="front"><a href="index.php?page=manage">Assign Project</a></div>
+                <div class="front"><a href="index.php?page=salaryemp">Salary Table</a></div>
+                <!-- <li class="front"><a href="empleave.php">Employee Leave</a></li> -->
+            </div>
+        </div>
             ';
-            echo '<a href="../index.php?page=manage">manage</a>';
+
+
+            // echo '<a href="../index.php?page=manage">manage</a>';
         } else if ($_SESSION['lv'] == 3) {
             echo '<a href="../index.php?page=myprofile">My profile</a>';
         }

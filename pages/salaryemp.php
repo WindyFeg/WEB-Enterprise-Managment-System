@@ -1,7 +1,7 @@
 <?php
 
 require_once('process/dbh.php');
-$sql = "SELECT * from `user` ";
+$sql = "SELECT user.id,user.fname,user.lname, user.salary from user";
 
 //echo "$sql";
 $result = mysqli_query($conn, $sql);
@@ -13,8 +13,8 @@ $result = mysqli_query($conn, $sql);
 <html>
 
 <head>
-    <title>View Employee | Admin Panel | XYZ Corporation</title>
-    <!-- <link rel="stylesheet" type="text/css" href="styleview.css"> -->
+    <title>Salary Table | XYZ Corporation</title>
+    <link rel="stylesheet" type="text/css" href="styleview.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -420,54 +420,41 @@ $result = mysqli_query($conn, $sql);
             color: white;
         }
     </style>
-
 </head>
 
 <body>
     <div class="divider"></div>
+    <div id="divimg">
+    </div>
+
     <table>
         <tr>
             <th class="center">Emp. ID</th>
-            <!-- <th align = "center">Picture</th> -->
             <th class="center">Name</th>
-            <th class="center">Email</th>
-            <th class="center">Birthday</th>
-            <th class="center">Gender</th>
-            <th class="center">Phone</th>
-            <!-- <th align = "center">NID</th> -->
-            <!-- <th align = "center">Address</th> -->
-            <!-- <th align = "center">Department</th> -->
-            <!-- <th align = "center">Degree</th> -->
-            <!-- <th align = "center">Point</th> -->
-            <th class="center">Options</th>
+            <!-- 	
+				
+				<th align = "center">Base Salary</th>
+				<th align = "center">Bonus</th> -->
+            <th class="center">Salary</th>
+
+
         </tr>
 
         <?php
         while ($user = mysqli_fetch_assoc($result)) {
             echo "<tr>";
             echo "<td>" . $user['id'] . "</td>";
-            // echo "<td><img src='process/".$employee['pic']."' height = 60px width = 60px></td>";
             echo "<td>" . $user['fname'] . " " . $user['lname'] . "</td>";
 
-            echo "<td>" . $user['email'] . "</td>";
-            echo "<td>" . $user['bdate'] . "</td>";
-            echo "<td>" . $user['gender'] . "</td>";
-            echo "<td>" . $user['phone'] . "</td>";
-            // echo "<td>".$employee['nid']."</td>";
-            // echo "<td>".$employee['address']."</td>";
-            // echo "<td>".$employee['dept']."</td>";
-            // echo "<td>".$employee['degree']."</td>";
-            // echo "<td>".$employee['points']."</td>";
-
-            echo "<td><a href=\"edit.php?id=$user[id]\">Edit</a> | <a href=\"delete.php?id=$user[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
+            // echo "<td>".$user['base']."</td>";
+            // echo "<td>".$user['bonus']." %</td>";
+            echo "<td>" . $user['salary'] . "</td>";
         }
 
 
         ?>
 
     </table>
-
-
 </body>
 
 </html>
