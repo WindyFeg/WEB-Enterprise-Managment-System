@@ -6,7 +6,6 @@
 	?>
 	<div class="body">
 		<?php
-		echo 'start login';
 		if (isset($_GET['page'])) {
 			$page = $_GET['page'];
 			include "pages/$page.php";
@@ -16,7 +15,6 @@
 		} else {
 			include 'pages/login.php';
 		}
-		echo '-After login';
 		?>
 	</div>
 	<?php

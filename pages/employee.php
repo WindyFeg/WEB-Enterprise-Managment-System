@@ -7,38 +7,14 @@ if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
     </head>
 
     <body>
-        <section class="header">
-            <a href="admin.php" class="logo">
-                <h5 class="card-title">
-                    <?= $_SESSION['fname'] ?>
-                    </br></br>
-                    level:
-                    <?= $_SESSION['lv'] ?>
-                </h5>
-            </a>
-
-            <nav class="navbar">
-                <a href="admin.php">home</a>
-                <a href="pages/department.php">department</a>
-                <a>manage</a>
-                <a href="logout.php">logout</a>
-
-            </nav>
-
-            <div id="menu-btn" class="fas fa-bars"></div>
-
-        </section>
-
+        <!-- TODO: Save in my notes qk -->
         <section class="services">
             <h1 class="heading-title">our services </h1>
-
             <div class="box-container">
                 <div class="box">
                     <img href="manage.php" src="images/manage.png" alt="">
                     <a href="pages/department.php">department</a>
-
                 </div>
-
                 <div class="box">
                     <img src="images/task.png" alt="">
                     <a>manage</a>

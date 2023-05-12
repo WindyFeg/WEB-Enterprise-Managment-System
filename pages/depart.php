@@ -7,7 +7,6 @@ if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
     </head>
 
     <body>
-
         <section class="services">
             <h1 class="heading-title">our services </h1>
 
