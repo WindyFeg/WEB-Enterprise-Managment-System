@@ -96,43 +96,43 @@ CREATE TABLE assign_task (
 
 
 INSERT INTO user (username, `password`, lv, fname, minit, lname, bdate, addr, phone, email, salary, gender)
-VALUES ('phong', 'phong0123', 1, 'Phong', 'Ky', 'Tran Trang', '2030-01-01', '123 Main St', '555-1234', 'johndoe@example.com', 5000.00, 'male');
+VALUES ('phong', 'phong0123', 1, 'Phong', 'Ky', 'Tran Trang', '2023-01-01', '123 Main St', '555-1234', 'johndoe@example.com', 5000.00, 'male');
 
 INSERT INTO user (username, `password`, lv, fname, minit, lname, bdate, addr, phone, email, salary, gender)
-VALUES ('dat', 'dat0123', 2, 'Jane', NULL, 'Doe', '2027-05-05', '456 Oak St', '555-5678', 'janedoe@example.com', 7500.00, 'female');
+VALUES ('dat', 'dat0123', 2, 'Jane', NULL, 'Doe', '2023-05-05', '456 Oak St', '555-5678', 'janedoe@example.com', 7500.00, 'female');
 
 INSERT INTO user (username, `password`, lv, fname, minit, lname, bdate, addr, phone, email, salary, gender)
-VALUES ('bobs', 'password789', 1, 'Bob', 'G', 'Smith', '2040-12-15', '789 Maple Ave', '555-9101', 'bob.smith@example.com', 4000.00, 'male');
+VALUES ('bobs', 'password789', 1, 'Bob', 'G', 'Smith', '2023-12-15', '789 Maple Ave', '555-9101', 'bob.smith@example.com', 4000.00, 'male');
 
 INSERT INTO user (username, `password`, lv, fname, minit, lname, bdate, addr, phone, email, salary, gender)
-VALUES ('maryp', 'password101112', 3, 'Mary', NULL, 'Poppins', '2029-06-30', '1010 Cherry Ln', '555-1212', 'mary.poppins@example.com', 10000.00, 'female');
+VALUES ('maryp', 'password101112', 3, 'Mary', NULL, 'Poppins', '2023-06-30', '1010 Cherry Ln', '555-1212', 'mary.poppins@example.com', 10000.00, 'female');
 
 INSERT INTO user (username, `password`, lv, fname, minit, lname, bdate, addr, phone, email, salary, gender)
-VALUES ('johnc', 'password131415', 2, 'John', 'C', 'Smith', '2080-09-10', '1314 Pine St', '555-1414', 'john.smith@example.com', 8000.00, 'male');
+VALUES ('johnc', 'password131415', 2, 'John', 'C', 'Smith', '2023-09-10', '1314 Pine St', '555-1414', 'john.smith@example.com', 8000.00, 'male');
 
 INSERT INTO user (username, `password`, lv, fname, minit, lname, bdate, addr, phone, email, salary, gender)
-VALUES ('samantha', 'password1617', 1, 'Samantha', NULL, 'Jones', '2093-08-22', '1617 Oak Ave', '555-1617', 'samantha.jones@example.com', 6000.00, 'female');
+VALUES ('samantha', 'password1617', 1, 'Samantha', NULL, 'Jones', '2023-08-22', '1617 Oak Ave', '555-1617', 'samantha.jones@example.com', 6000.00, 'female');
 
 INSERT INTO user (username, `password`, lv, fname, minit, lname, bdate, addr, phone, email, salary, gender)
-VALUES ('jackblack', 'password1819', 2, 'Jack', NULL, 'Black', '2088-01-24', '1819 Maple Ln', '555-1819', 'jack.black@example.com', 9000.00, 'male');
+VALUES ('jackblack', 'password1819', 2, 'Jack', NULL, 'Black', '2023-01-24', '1819 Maple Ln', '555-1819', 'jack.black@example.com', 9000.00, 'male');
 
 INSERT INTO user (username, `password`, lv, fname, minit, lname, bdate, addr, phone, email, salary, gender)
-VALUES ('janekim', 'password2021', 3, 'Jane', NULL, 'Kim', '2077-11-08', '2021 Pine St', '555-2021', 'jane.kim@example.com', 11000.00, 'female');
+VALUES ('janekim', 'password2021', 3, 'Jane', NULL, 'Kim', '2023-11-08', '2021 Pine St', '555-2021', 'jane.kim@example.com', 11000.00, 'female');
 
 INSERT INTO user (username, `password`, lv, fname, minit, lname, bdate, addr, phone, email, salary, gender)
-VALUES ('toms', 'password2223', 1, 'Tom', 'J', 'Smith', '2098-04-01', '2223 Oak Ln', '555-2223', 'tom.smith@example.com', 5000.00, 'male');
+VALUES ('toms', 'password2223', 1, 'Tom', 'J', 'Smith', '2023-04-01', '2223 Oak Ln', '555-2223', 'tom.smith@example.com', 5000.00, 'male');
 
 INSERT INTO user (username, `password`, lv, fname, minit, lname, bdate, addr, phone, email, salary, gender)
-VALUES ('jennab', 'password2425', 2, 'Jenna', NULL, 'Brown', '2091-02-14', '2425 Maple Ave', '555-2425', 'jenna.brown@example.com', 8000.00, 'female');
+VALUES ('jennab', 'password2425', 2, 'Jenna', NULL, 'Brown', '2023-02-14', '2425 Maple Ave', '555-2425', 'jenna.brown@example.com', 8000.00, 'female');
 
 INSERT INTO user (username, `password`, lv, fname, minit, lname, bdate, addr, phone, email, salary, gender)
-VALUES ('markt', 'password2627', 3, 'Mark', 'T', 'Johnson', '2086-09-05', '2627 Pine Ln', '555-2627', 'mark.johnson@example.com', 12000.00, 'male');
+VALUES ('markt', 'password2627', 3, 'Mark', 'T', 'Johnson', '2023-09-05', '2627 Pine Ln', '555-2627', 'mark.johnson@example.com', 12000.00, 'male');
 
 INSERT INTO user (username, `password`, lv, fname, minit, lname, bdate, addr, phone, email, salary, gender)
-VALUES ('oliviah', 'password2829', 1, 'Olivia', 'H', 'Davis', '2096-05-17', '2829 Oak Ave', '555-2829', 'olivia.davis@example.com', 6000.00, 'female');
+VALUES ('oliviah', 'password2829', 1, 'Olivia', 'H', 'Davis', '2023-05-17', '2829 Oak Ave', '555-2829', 'olivia.davis@example.com', 6000.00, 'female');
 
 INSERT INTO user (username, `password`, lv, fname, minit, lname, bdate, addr, phone, email, salary, gender)
-VALUES ('michaelp', 'password3031', 2, 'Michael', 'P', 'Miller', '2092-07-30', '3031 Maple Ln', '555-3031', 'michael.miller@example.com', 9000.00, 'male');
+VALUES ('michaelp', 'password3031', 2, 'Michael', 'P', 'Miller', '2023-07-30', '3031 Maple Ln', '555-3031', 'michael.miller@example.com', 9000.00, 'male');
 
 
 
