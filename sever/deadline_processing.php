@@ -12,7 +12,7 @@ $row = $result->fetch_assoc();
 
 
 // check if row is not null
-if ($row["task_id"] == null) {
+if (!isset($row["task_id"])) {
     echo "<div>No deadline</div>";
     return;
 } else {

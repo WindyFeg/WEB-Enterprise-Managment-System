@@ -64,6 +64,15 @@
                 <button class="btn_employee" onclick={DeleteTask()}>
                     Delete Task
                 </button>
+                <button class="btn_employee">
+                    Approve Task
+                </button>
+                <button class="btn_employee">
+                    Decline Task
+                </button>
+                <button class="btn_employee">
+                    Rework
+                </button>
             </div>
             <div class="list_employee">
                 <div id="table-wrapper">
