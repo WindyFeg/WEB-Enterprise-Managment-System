@@ -12,8 +12,8 @@ if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
 
             <div class="box-container">
                 <div class="box">
-                    <img href="../index.php?page=manage" src="images/manage.png" alt="">
-                    <a href="pages/department.php">department</a>
+                    <img href="../index.php?page=department" src="images/manage.png" alt="">
+                    <a href="../index.php?page=department">department</a>
 
                 </div>
 

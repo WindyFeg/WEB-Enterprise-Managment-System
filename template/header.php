@@ -46,7 +46,7 @@ session_start();
 </head>
 
 <section class="header">
-    <a href="../index.php?page=home" class="logo">Company</a>
+    <a href="../index.php?page=admin" class="logo">Company</a>
     <h4 class="card-title">
         <?php
         if (isset($_SESSION['username']) && isset($_SESSION['id'])) {
@@ -58,7 +58,7 @@ session_start();
         ?>
     </h4>
     <nav class="navbar">
-        <a href="../index.php?page=home">home</a>
+        <a href="../index.php?page=admin">home</a>
 
         <?php
         if (isset($_SESSION['lv'])) {
@@ -74,7 +74,7 @@ session_start();
                     <div><a href="index.php?page=viewemp&&name=Finance">Finance</a> </div>
                     <div><a href="index.php?page=viewemp&&name=Advertise">Advertise</a> </div>
                     <div><a href="index.php?page=viewemp&&name=IT">IT</a> </div>
-                    </div>
+                    </div>  
                 </div>
                 <div class="dropdown">
                 <a href="">Options</a>
