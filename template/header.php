@@ -10,10 +10,12 @@ session_start();
     <link rel="stylesheet" href="assets/index.css">
     <link rel="stylesheet" href="script.js">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <title>My website</title>
     <style>
         .dropdown {
@@ -44,7 +46,7 @@ session_start();
 </head>
 
 <section class="header">
-    <a href="../index.php?page=home" class="logo">Comany</a>
+    <a href="../index.php?page=home" class="logo">Company</a>
     <h4 class="card-title">
         <?php
         if (isset($_SESSION['username']) && isset($_SESSION['id'])) {
@@ -59,8 +61,38 @@ session_start();
         <a href="../index.php?page=home">home</a>
 
         <?php
-        if ($_SESSION['lv'] == 1 || $_SESSION['lv'] == 2) {
-            // echo '<a href="../index.php?page=depart">department</a>';
+        if (isset($_SESSION['lv'])) {
+            if ($_SESSION['lv'] == 1 || $_SESSION['lv'] == 2) {
+                // echo '<a href="../index.php?page=depart">department</a>';
+                echo '
+                <div class="dropdown">
+                <!-- <span>Department</span> -->
+                    <a href="">department</a>
+                <div class="dropdown-content">
+                    <div><a href="index.php?page=viewemp&&name=Sales">Sales</a> </div>
+                    <div><a href="index.php?page=viewemp&&name=Marketing">Marketing</a> </div>
+                    <div><a href="index.php?page=viewemp&&name=Finance">Finance</a> </div>
+                    <div><a href="index.php?page=viewemp&&name=Advertise">Advertise</a> </div>
+                    <div><a href="index.php?page=viewemp&&name=IT">IT</a> </div>
+                    </div>
+                </div>
+                <div class="dropdown">
+                <a href="">Options</a>
+                <div class="dropdown-content"> 
+                    
+                    <div class="front"><a href="index.php?page=addemp">Add Employee</a> </div>
+                    <div class="front"><a href="index.php?page=viewemp">View Employee</a></div>
+                    <div class="front"><a href="index.php?page=manage">Assign Project</a></div>
+                    <div class="front"><a href="index.php?page=salaryemp">Salary Table</a></div>
+                    <!-- <li class="front"><a href="empleave.php">Employee Leave</a></li> -->
+                </div>
+            </div>
+                ';
+                // echo '<a href="../index.php?page=manage">manage</a>';
+            } else if ($_SESSION['lv'] == 3) {
+                echo '<a href="../index.php?page=myprofile">My profile</a>';
+            }
+        } else {
             echo '
             <div class="dropdown">
             <!-- <span>Department</span> -->
@@ -85,12 +117,8 @@ session_start();
             </div>
         </div>
             ';
-
-
-            // echo '<a href="../index.php?page=manage">manage</a>';
-        } else if ($_SESSION['lv'] == 3) {
-            echo '<a href="../index.php?page=myprofile">My profile</a>';
         }
+
         ?>
         <?php
 
