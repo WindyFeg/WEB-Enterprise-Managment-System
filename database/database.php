@@ -2,7 +2,7 @@
 
 $ServerName = "localhost";
 $dbUsername = "root";
-$dbPassword = "";
+$dbPassword = "root";
 $dbName = "ManageSys";
 
 //$ Create connection
