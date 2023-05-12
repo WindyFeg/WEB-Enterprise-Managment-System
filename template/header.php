@@ -82,7 +82,7 @@ session_start();
                     
                     <div class="front"><a href="index.php?page=addemp">Add Employee</a> </div>
                     <div class="front"><a href="index.php?page=viewemp">View Employee</a></div>
-                    <div class="front"><a href="index.php?page=manage">Assign Project</a></div>
+                    <div class="front"><a href="http://localhost/index.php?page=department">Assign Project</a></div>
                     <div class="front"><a href="index.php?page=salaryemp">Salary Table</a></div>
                     <!-- <li class="front"><a href="empleave.php">Employee Leave</a></li> -->
                 </div>

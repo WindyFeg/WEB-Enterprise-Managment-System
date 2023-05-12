@@ -48,7 +48,8 @@
                 <div class="deadline_tab">
 
                     <?php
-                    echo "<script>", "GetAllDeadline(7);", "</script>"
+                    $id = $_SESSION['id'];
+                    echo "<script>", "GetAllDeadline($id);", "</script>"
                         ?>
                 </div>
             </div>

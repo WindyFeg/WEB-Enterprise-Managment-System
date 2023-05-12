@@ -14,7 +14,12 @@ $row = $result->fetch_assoc();
 if (isset($row)) {
 
     $commentFromDB = $row['comment'];
-    $cmtAddName = "User " . $_SESSION['fname'] . ": " . $cmt;
+    if ($cmt == "") {
+        $cmtAddName = "";
+    } else {
+
+        $cmtAddName = "User " . $_SESSION['fname'] . ": " . $cmt;
+    }
     $sql = "CALL addComment($taskid , TRUE, '$commentFromDB <p>$cmtAddName</p>')";
     $result = $conn->query($sql);
 
