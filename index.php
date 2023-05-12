@@ -15,6 +15,7 @@
 		} else {
 			include 'pages/login.php';
 		}
+		echo 'hello em';
 		?>
 	</div>
 	<?php
@@ -23,3 +24,4 @@
 </body>
 
 </html>
+
