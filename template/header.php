@@ -33,8 +33,15 @@ session_start();
     </h4>
     <nav class="navbar">
         <a href="../index.php?page=home">home</a>
-        <a href="../index.php?page=depart">department</a>
-        <a href="../index.php?page=manage">manage</a>
+
+        <?php
+            if ($_SESSION['lv'] == 1) {
+                echo '<a href="../index.php?page=depart">department</a>';
+                echo '<a href="../index.php?page=manage">manage</a>';
+            } else if ($_SESSION['lv'] == 3) {
+                echo '<a href="../index.php?page=myprofile">My profile</a>';
+            }
+        ?>
         <?php
 
         if (isset($_SESSION['username']) && isset($_SESSION['id'])) {

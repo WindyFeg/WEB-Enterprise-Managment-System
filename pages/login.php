@@ -1,8 +1,11 @@
 <?php
 //login template
 echo 'hello';
+// session_unset();
+// session_destroy();
 
 if (!isset($_SESSION['username']) && !isset($_SESSION['id'])) { ?>
+    <!-- echo 'login processing'; -->
     <!DOCTYPE html>
     <html>
 
@@ -44,6 +47,6 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['id'])) { ?>
 
     </html>
 <?php } else {
-    // header("Location: redirect.php");
-    echo '__';
+    header("Location: redirect.php");
+    // echo '__';
 } ?>
