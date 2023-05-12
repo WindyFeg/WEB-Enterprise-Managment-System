@@ -377,3 +377,20 @@
       font-weight: 400;
       color: #6bc574;
   }
+
+  .department_box {
+      width: 150px;
+      height: 150px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fafafa;
+      transition: 0.3s;
+      padding: 10px;
+      margin: 10px;
+  }
+
+  .department_box:hover {
+      cursor: pointer;
+      background-color: rgba(173, 83, 211, 0.5);
+  }

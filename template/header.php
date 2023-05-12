@@ -7,6 +7,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/index.css">
     <link rel="stylesheet" href="script.js">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -19,13 +20,17 @@ session_start();
 </head>
 
 <section class="header">
-    <a href="home.php" class="logo">Comany</a>
-    <h5 class="card-title">
-        <?= $_SESSION['fname'] ?>
-        </br></br>
-        level:
-        <?= $_SESSION['lv'] ?>
-    </h5>
+    <a href="../index.php?page=home" class="logo">Comany</a>
+    <h4 class="card-title">
+        <?php
+        if (isset($_SESSION['username']) && isset($_SESSION['id'])) {
+            echo "User:";
+            echo $_SESSION['fname'];
+            echo "level:";
+            echo $_SESSION['lv'];
+        }
+        ?>
+    </h4>
     <nav class="navbar">
         <a href="../index.php?page=home">home</a>
         <a href="../index.php?page=depart">department</a>
@@ -33,7 +38,7 @@ session_start();
         <?php
 
         if (isset($_SESSION['username']) && isset($_SESSION['id'])) {
-            echo '<a href="../logout.php">logout</a>';
+            echo '<a href="../index.php?page=logout">logout</a>';
         }
         ?>
     </nav>
@@ -41,10 +46,3 @@ session_start();
     <div id="menu-btn" class="fas fa-bars"></div>
 
 </section>
-
-<!-- Login UI
-<form action="../sever/authentication.php" method="post">
-    <input type="text" name="username" placeholder="Username">
-    <input type="password" name="password" placeholder="Password">
-    <button type="submit" name="submit">Login</button>
-</form> -->

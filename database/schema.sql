@@ -99,7 +99,7 @@ INSERT INTO user (username, `password`, lv, fname, minit, lname, bdate, addr, ph
 VALUES ('phong', 'phong0123', 1, 'Phong', 'Ky', 'Tran Trang', '1990-01-01', '123 Main St', '555-1234', 'johndoe@example.com', 5000.00, 'male');
 
 INSERT INTO user (username, `password`, lv, fname, minit, lname, bdate, addr, phone, email, salary, gender)
-VALUES ('janedoe', 'password456', 2, 'Jane', NULL, 'Doe', '1995-05-05', '456 Oak St', '555-5678', 'janedoe@example.com', 7500.00, 'female');
+VALUES ('dat', 'dat0123', 2, 'Jane', NULL, 'Doe', '1995-05-05', '456 Oak St', '555-5678', 'janedoe@example.com', 7500.00, 'female');
 
 INSERT INTO user (username, `password`, lv, fname, minit, lname, bdate, addr, phone, email, salary, gender)
 VALUES ('bobs', 'password789', 1, 'Bob', 'G', 'Smith', '1985-12-15', '789 Maple Ave', '555-9101', 'bob.smith@example.com', 4000.00, 'male');

@@ -1,8 +1,8 @@
 <?php
-session_start() ;
-include_once "database.php" ;
+session_start();
+include_once "database.php";
 
-$emp = $_REQUEST["ownerid"] ;
+$emp = $_SESSION['id'];
 
 $require = 1024 * 20 * 8;
 
@@ -55,9 +55,8 @@ if ($emp != 0) {
     } else {
         echo "Failed no 'userfile' set!";
     }
-}
-else {
-    echo "Failed no owner set!" ;
+} else {
+    echo "Failed no owner set!";
 }
 ?>
 ?>
